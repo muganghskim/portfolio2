@@ -1,0 +1,110 @@
+.storeWrap{
+    background-color: #f7f6f3;
+    padding: 100px 0;
+    .center{
+        width: 76%;
+        margin: 0 auto;
+        h2{
+            font-size: 50px;
+            color: #0F5FA6;
+            margin-bottom: 65px;
+        }
+        .store_tapmenu{
+            display: flex;
+            justify-content: center;
+            li{
+                margin: 0 25px;
+                font-size: 25px;
+                margin-bottom: 100px;
+                a{
+                    color: #0F5FA6;
+                    border-bottom: 1px solid #0F5FA6;
+                }
+            }
+        }
+        .opennotitle{
+            text-align: center;
+            font-size: 35px;
+        }
+        .searchWrap{
+            border-top: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+            display: flex;
+            justify-content: center;
+            .left_searchMap{
+                width: 40%;
+                img{
+                    width: 60%;
+                }
+            }
+            .right_search{
+                color: #0F5FA6;
+                margin-top: 50px;
+                .city1,.city2{
+                    border: 1px solid #dfdfdf;
+                    color: #0F5FA6;
+                    background-color: #f7f6f3;
+                    margin-top: 20px;
+                    margin-bottom: 40px;
+                    padding: 10px;
+                }
+                .namesearch{
+                    border: 1px solid #dfdfdf;
+                    color: #0F5FA6;
+                    background-color: #f7f6f3;
+                    margin-top: 20px;
+                    padding: 10px;
+                }
+                button{
+                    background-color: #0F5FA6;
+                    border: none;
+                    color: #fff;
+                    padding: 10px;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.store_s_title{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+    color: #0F5FA6;
+    margin-bottom: 40px;
+}
+.nostore{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+    color: #0F5FA6;
+    margin-bottom: 40px;
+}
+.storelistheader{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+    .line{
+        width: 25%;
+        text-align: center;
+        line-height: 40px;
+        border-top: 1px solid #0F5FA6;
+        border-bottom: 1px solid #0F5FA6;
+        color: #0F5FA6;
+    }
+}
+.storelist{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+    .line{
+        width: 25%;
+        text-align: center;
+        line-height: 60px;
+        border-bottom: 1px solid #a7ccec;
+        color: #0F5FA6;
+    }
+}

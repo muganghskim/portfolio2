@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 상품등록 페이지</title>
+    <link rel="stylesheet" href="/css/admin_prdlist.css">
+    <style>
+        .prdwrap .list {border: 1px solid #000; margin-right: 20px; margin-bottom: 20px; width: 200px;}
+        .prdwrap .list img { width: 150px;}
+    </style>
+</head>
+<body>
+    <!-- 상품등록 페이지 a / 매장등록 페이지 a -->
+    <ul class="admin_menu">
+        <li><a href="/admin/prdlist">상품등록페이지</a></li>
+        <li><a href="/admin/storelist">매장등록페이지</a></li>
+        <li><a href="/admin/brdlist">뉴스등록페이지</a></li>
+    </ul>
+    <!-- 등록된 상품목록 전부다 보여주는 구간 -->
+    <div class="prdwrap">
+        <% for(let i=0; i < prdData.length; i++){ %>
+        <div class="list">
+            <h3><%-prdData[i].num%></h3>
+            <p><%-prdData[i].name%></p>
+            <p><%-prdData[i].category%></p>
+            <img src="/upload/<%-prdData[i].thumbnail%>">
+        </div>
+        <% } %>
+    </div>
+    <!-- 상품을 등록하는 form태그 구간 -->
+    <form enctype="multipart/form-data" action="/add/prdlist" method="post">
+        <select name="category">
+            <option value="풍경화">풍경화</option>
+            <option value="정물화">정물화</option>
+            <option value="초상화">초상화</option>
+            <option value="초현실주의">초현실주의</option>
+            <option value="르네상스">르네상스</option>
+        </select>
+        <input type="text" name="name" placeholder="제목">
+        <textarea name="context" placeholder="설명"></textarea>
+        <input type="file" name="thumbnail">
+        <button type="submit">상품등록</button>
+    </form>
+</body>
+</html>

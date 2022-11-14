@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매장 검색</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="storeWrap">
+        <div class="center">
+            <h2>전시관 안내</h2>
+            <ul class="store_tapmenu">
+                <li><a href="/store">전시관 찾기</a></li>
+                <li><a href="/storeopen">오픈예정 전시관</a></li>
+            </ul>
+            <div class="searchWrap">
+                <div class="left_searchMap"><img src="/img/koreamap.png"></div>
+                <div class="right_search">
+                    <!-- 사용자가 매장 검색 하는 구간(지역으로 검색) -->
+                    <form action="/search/local" method="get">
+                        <div>
+                            <div>01 지역으로 검색</div>
+                            <!-- 시/도 선택 -->
+                            <select class="city1" name="city1">
+                                <option value>시/도 선택</option>
+                            </select>
+                            <!-- 구/군 선택 -->
+                            <select class="city2" name="city2">
+                                <option value>구/군 선택</option>
+                            </select>
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                    <!-- 사용자가 매장 검색 하는 구간(매장명으로 검색) -->
+                    <form action="/search/storename" method="get">
+                        <div>
+                            <div>02 전시관명으로 검색</div>
+                            <input class="namesearch" type="text" name="name">
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 검색 시 검색 결과 없는 경우 -->
+    <% if(storeData.length === 0){ %>
+        <h3 class="nostore">해당하는 전시관이 없습니다.</h3>
+    <% } else{ %>
+    <!-- 처음 들어왔을 때 모든 매장 리스트 보여줌 -->
+    <h3 class="store_s_title">전시관 안내</h3>
+    <div class="storelistheader">
+        <div class="line">
+            <div class="fir">매장명</div>
+        </div>
+        <div class="line">
+            <div class="sec">위치</div>
+        </div>
+        <div class="line">
+            <div class="thr">상세주소</div>
+        </div>
+        <div class="line">
+            <div class="for">전화번호</div>
+        </div>
+    </div>
+    <% for(let i = 0; i < storeData.length; i++){%>
+        <div class="storelist">
+            <div class="line">
+                <div><%-storeData[i].name %></div>
+            </div>
+            <div class="line">
+                <div><%- storeData[i].sido + storeData[i].sigugun %></div>
+            </div>
+            <div class="line">
+                <div><%-storeData[i].adress %></div>
+            </div>
+            <div class="line">
+                <div><%-storeData[i].phone %></div>
+            </div>
+        </div>
+    <% }} %>
+        </div>
+    </div>
+    
+    
+    <%- include("common/footer.ejs") %>
+    <script src="/js/hangjungdong.js"></script>
+    <script src="js/storeselect.js"></script>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+</body>
+</html>

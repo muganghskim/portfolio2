@@ -1,0 +1,89 @@
+#header{
+    display: flex;
+    justify-content: center;
+    .center{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        .logo{
+            line-height: 100px;
+            img{
+                width: 150px;
+                height: 65px;
+            }
+        }
+        .gnbWrap{
+            position: relative;
+            .depthbg{
+                background-color: #fff;
+                position: absolute;
+                left: -100%;
+                top: 100px;
+                width: 300%;
+                height: 0px;
+                z-index: 8;
+                transition: all 0.5s;
+            }
+            .gnb{
+                display: flex;
+                margin-left: 100px;
+                > li{
+                    line-height: 100px;
+                    margin: 0 20px;
+                    font-size: 18px;
+                    width: 150px;
+                    text-align: center;
+                    position: relative;
+                    a{
+                        color: #0F5FA6;
+                    }
+                    .depth{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 100px;
+                        z-index: 9;
+                        background-color: #fff;
+                        height: 0px;
+                        overflow: hidden;
+                        transition: all 0.5s;
+                        li{
+                            line-height: 40px;
+                            font-size: 16px;
+                            text-align: center;
+                            &:last-child{
+                                margin-bottom: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .galBtn{
+            margin-top: 30px;
+            margin-left: 100px;
+            a{
+                display: block;
+                width: 100px;
+                height: 40px;
+                background-color: #0F5FA6;
+                color: #fff;
+                line-height: 40px;
+                border-radius: 20px;
+                text-align: center;
+            }
+        }
+        .h-icon{
+            display: flex;
+            font-size: 20px;
+            li{
+                margin: 0 10px;
+                line-height: 100px;
+                a{
+                    color: #0F5FA6;
+                }
+            }
+        }
+    }
+}

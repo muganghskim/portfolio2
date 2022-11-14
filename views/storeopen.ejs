@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오픈예정 전시관</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="storeWrap">
+        <div class="center">
+            <h2>전시관 안내</h2>
+            <ul class="store_tapmenu">
+                <li><a href="/store">전시관 찾기</a></li>
+                <li><a href="/storeopen">오픈예정 전시관</a></li>
+            </ul>
+            <h2 class="opennotitle">오픈예정 전시관이 없습니다.</h2>
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+</body>
+</html>

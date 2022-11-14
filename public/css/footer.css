@@ -1,0 +1,48 @@
+#footer {
+  position: relative;
+  background-color: #0F5FA6;
+}
+#footer .center {
+  color: #fff;
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+#footer .center .f-logo {
+  padding-top: 80px;
+  padding-bottom: 42px;
+}
+#footer .center .f-icon {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 45px;
+  font-size: 30px;
+}
+#footer .center .f-icon li {
+  margin: 0 30px;
+}
+#footer .center .f-icon li a {
+  color: #fff;
+}
+#footer .center p {
+  padding-bottom: 50px;
+}
+#footer .center .copy {
+  padding: 100px 0 70px 0;
+}
+#footer #scTop {
+  position: absolute;
+  right: 95px;
+  top: 60px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+#footer #scTop .upWrap {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  line-height: 50px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뉴스 페이지</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+    <div class="newsWrap">
+        <div class="center">
+            <h2>공지사항</h2>
+            <ul class="news_tapmenu">
+                <li><a href="/board">새로운소식</a></li>
+                <li><a href="/board/news">보도자료</a></li>
+            </ul>
+            <div class="brdWrap">
+                <% for(let i =0; i <brdData.length; i++){ %>
+                    <div class="brdlist">
+                        <div><img src="/upload/<%-brdData[i].thumbnail%>"></div>
+                        <h3><%-brdData[i].name%></h3>
+                        <p><%-brdData[i].time%></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+</body>
+</html>

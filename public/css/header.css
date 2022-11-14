@@ -1,0 +1,88 @@
+#header {
+  display: flex;
+  justify-content: center;
+}
+#header .center {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+#header .center .logo {
+  line-height: 100px;
+}
+#header .center .logo img {
+  width: 150px;
+  height: 65px;
+}
+#header .center .gnbWrap {
+  position: relative;
+}
+#header .center .gnbWrap .depthbg {
+  background-color: #fff;
+  position: absolute;
+  left: -100%;
+  top: 100px;
+  width: 300%;
+  height: 0px;
+  z-index: 8;
+  transition: all 0.5s;
+}
+#header .center .gnbWrap .gnb {
+  display: flex;
+  margin-left: 100px;
+}
+#header .center .gnbWrap .gnb > li {
+  line-height: 100px;
+  margin: 0 20px;
+  font-size: 18px;
+  width: 150px;
+  text-align: center;
+  position: relative;
+}
+#header .center .gnbWrap .gnb > li a {
+  color: #0F5FA6;
+}
+#header .center .gnbWrap .gnb > li .depth {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+  z-index: 9;
+  background-color: #fff;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+#header .center .gnbWrap .gnb > li .depth li {
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+}
+#header .center .gnbWrap .gnb > li .depth li:last-child {
+  margin-bottom: 50px;
+}
+#header .center .galBtn {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+#header .center .galBtn a {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: #0F5FA6;
+  color: #fff;
+  line-height: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+#header .center .h-icon {
+  display: flex;
+  font-size: 20px;
+}
+#header .center .h-icon li {
+  margin: 0 10px;
+  line-height: 100px;
+}
+#header .center .h-icon li a {
+  color: #0F5FA6;
+}
