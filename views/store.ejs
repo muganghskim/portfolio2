@@ -12,15 +12,18 @@
     <div class="storeWrap">
         <div class="center">
             <h2>전시관 안내</h2>
-            <ul class="store_tapmenu">
+            <ul class="gal_tapmenu">
                 <li><a href="/store">전시관 찾기</a></li>
                 <li><a href="/storeopen">오픈예정 전시관</a></li>
             </ul>
             <div class="searchWrap">
-                <div class="left_searchMap"><img src="/img/koreamap.png"></div>
+                <div class="left_searchMap">
+                    <!-- 지역으로 된 태그 생성은 셀프-->
+                    <img src="/img/koreamap.png">
+                </div>
                 <div class="right_search">
                     <!-- 사용자가 매장 검색 하는 구간(지역으로 검색) -->
-                    <form action="/search/local" method="get">
+                    <form id="local" action="/store/search/local" method="get">
                         <div>
                             <div>01 지역으로 검색</div>
                             <!-- 시/도 선택 -->
@@ -35,7 +38,7 @@
                         </div>
                     </form>
                     <!-- 사용자가 매장 검색 하는 구간(매장명으로 검색) -->
-                    <form action="/search/storename" method="get">
+                    <form action="/store/search/storename" method="get">
                         <div>
                             <div>02 전시관명으로 검색</div>
                             <input class="namesearch" type="text" name="name">
@@ -79,6 +82,7 @@
                 <div><%-storeData[i].phone %></div>
             </div>
         </div>
+        <input id="searchResult" type="hidden" value="<%- storeData[i].sido %>">
     <% }} %>
         </div>
     </div>
@@ -86,8 +90,49 @@
     
     <%- include("common/footer.ejs") %>
     <script src="/js/hangjungdong.js"></script>
-    <script src="js/storeselect.js"></script>
+    <script src="/js/storeselect.js"></script>
     <script src="/js/dropdown.js"></script>
     <script src="/js/scroll.js"></script>
+    
+
+    <script>
+        const mapCity = document.querySelector(".left_searchMap");
+        
+        for(let i = 0; i < hangjungdong.sido.length; i++){
+            let cityTag = document.createElement("div"); //태그 생성
+            let cityText = document.createTextNode(hangjungdong.sido[i].codeNm); //태그에 들어갈 텍스트 생성
+            cityTag.append(cityText);
+            cityTag.setAttribute("data-name",hangjungdong.sido[i].codeNm);
+            cityTag.setAttribute("class",hangjungdong.sido[i].ciNm);
+            cityTag.classList.add("circle");
+            cityTag.setAttribute("data-sigugun",hangjungdong.sido[i].sido);
+            mapCity.append(cityTag);
+        }
+
+        const circles = document.querySelectorAll(".circle");
+        const local = document.querySelector("#local");
+        
+        circles.forEach((item,index)=>{
+            let name = item.getAttribute("data-name");
+            item.addEventListener("click",()=>{
+                let sigu = item.getAttribute("data-sigugun");
+                for(let i=0; i< city1.options.length; i++){
+                    if(name == city1.options[i].value){
+                        city1.options[i].selected = true;
+                        sigugun(sigu);
+                    }
+                }
+                local.submit(); //form태그 데이터 전송
+            });
+        });
+        
+        let searchResult = document.querySelector("#searchResult");
+        if(searchResult.value == "경기"){
+            circles[8].classList.add("on");
+        }
+        
+    </script>
+    <script>history.replaceState({}, null, "/store");</script>
+    <script src="/js/tapmenu.js"></script>
 </body>
 </html>

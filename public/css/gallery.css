@@ -11,18 +11,60 @@
   color: #0F5FA6;
   margin-bottom: 65px;
 }
-.galWrap .center .gal_tapmenu {
+
+.gall_wrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gall_frame {
+  width: 23%;
+  box-sizing: border-box;
+  margin: 2% 1%;
+  padding: 1%;
+  border: 10px solid;
+  border-bottom-color: #0F5FA6;
+  border-top-color: rgba(15, 96, 166, 0.5764705882);
+  border-left-color: rgba(15, 96, 166, 0.5764705882);
+  border-right-color: #0F5FA6;
+}
+.gall_frame .imgWrap {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.gall_frame .imgWrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.5) inset;
+}
+.gall_frame .imgWrap img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.gall_frame .imgWrap .titlebg {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  bottom: -20px;
+  transform: translate(-50%);
+  height: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.galWrap .center .gal_tapmenu li {
-  margin: 0 25px;
-  font-size: 25px;
-  margin-bottom: 100px;
-}
-.galWrap .center .gal_tapmenu li a {
-  color: #0F5FA6;
-  border-bottom: 1px solid #0F5FA6;
+.gall_frame .imgWrap:hover .titlebg {
+  height: 100%;
+  bottom: 0;
 }
 
 .ca_wrap {
@@ -39,13 +81,11 @@
   width: 200%;
   display: flex;
 }
-
 .ca_move .ca_child {
   width: 12.5%;
   box-sizing: border-box;
   padding: 0 1%;
 }
-
 .ca_move .ca_child img {
   width: 100%;
   height: 100%;
@@ -53,6 +93,12 @@
 
 .ca_position {
   position: relative;
+}
+.ca_position h3 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: #0F5FA6;
 }
 
 .ca_prev, .ca_next {
@@ -70,6 +116,89 @@
 
 .ca_next {
   right: 0;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+.detail .frame {
+  width: 35%;
+  margin-left: 15%;
+}
+.detail .frame .framein {
+  width: 100%;
+  padding: 2%;
+  border: 10px solid;
+  border-bottom-color: #0F5FA6;
+  border-top-color: rgba(15, 96, 166, 0.5764705882);
+  border-left-color: rgba(15, 96, 166, 0.5764705882);
+  border-right-color: #0F5FA6;
+}
+.detail .frame .framein .imgWrap {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.detail .frame .framein .imgWrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.5) inset;
+}
+.detail .frame .framein .imgWrap img {
+  width: 100%;
+}
+.detail .frame_info {
+  color: #0F5FA6;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detail .frame_info h3 {
+  font-size: 23px;
+  text-align: left;
+}
+.detail .frame_info p {
+  text-align: left;
+  margin-top: 20px;
+  line-height: 18px;
+  width: 40%;
+}
+
+.golist {
+  display: block;
+  width: 150px;
+  height: 50px;
+  margin: 50px auto;
+  background-color: #0F5FA6;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 25px;
+}
+
+.gal_tapmenu {
+  display: flex;
+  justify-content: center;
+}
+.gal_tapmenu li {
+  margin: 0 25px;
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+.gal_tapmenu li a {
+  color: #0F5FA6;
+  border-bottom: 1px solid #0F5FA6;
+  opacity: 0.5;
+}
+.gal_tapmenu li.on a {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1600px) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아트 스토리 페이지</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+        <div class="donaitionWrap">
+            <div class="leftInfo">
+                <h2>사회적 기부<span>를 통해<br>AI 갤러리와 함께 세상을<br></span>더 아름답게<span> 만들어보자<br>전시회에서 만나요</span></h2>
+            </div>
+            <div class="rightImg"><img src="/img/building.jpg"></div>
+        </div>
+        <div class="donaitionCount donaition">
+            <div class="top_ani">
+                <div class="circle_wrap">
+                    <div class="small_bg1"></div>
+                    <div class="small_bg2"></div>
+                    <div class="circle_line"></div>
+                    <div class="circle_small">
+                        <div class="circle_move"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="leftInfo">
+                <h2>AI 갤러리 전시회에서 다양한<br>굿즈를 통한 기부를 즐기세요!</h2>
+                <p>다양한 경로로 사회적 약자들에게 기부 할 수 있습니다.<br>전시회에 참여하여 AI 갤러리와 기부를 함께 하세요.</p>
+            </div>
+            <div class="right_count">
+                <!-- 카운트 -->
+                <div class="box box1">
+                    <div>
+                        <p class="achieve">현재까지 모인 금액</p>
+                        <span class="count">0</span>
+                        <span class="price">$</span>
+                        <p class="dona_time">2022.11.10일 기준</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/countUp.js"></script>
+    <script src="/js/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>

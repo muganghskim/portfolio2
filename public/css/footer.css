@@ -26,9 +26,30 @@
 }
 #footer .center p {
   padding-bottom: 50px;
+  font-weight: bold;
+  font-size: 16px;
+}
+#footer .center .f-info {
+  padding-top: 50px;
 }
 #footer .center .copy {
-  padding: 100px 0 70px 0;
+  padding-bottom: 70px;
+  font-size: 13px;
+}
+#footer .center .adress span {
+  font-size: 13px;
+  line-height: 25px;
+}
+#footer .center .adress span::after {
+  display: inline-block;
+  content: "";
+  height: 10px;
+  width: 1px;
+  background-color: #777;
+  margin: 0 10px;
+}
+#footer .center .adress span:nth-child(2)::after, #footer .center .adress span:nth-child(5)::after {
+  display: none;
 }
 #footer #scTop {
   position: absolute;

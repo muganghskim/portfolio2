@@ -19,98 +19,21 @@
                 <li><a href="/menu/surrealism">초현실주의</a></li>
                 <li><a href="/menu/renaissance">르네상스</a></li>
             </ul>
-            <div class="ca_position">
-                <div class="ca_wrap">
-                    <!-- 캐러셀 움직이는 기차 역할 -->
-                    <div class="ca_move">
-                    <% for(let i =0; i <prdData.length; i++){ %>
-                        <div class="ca_child"><img src="/upload/<%-prdData[i].thumbnail%>"></div>
-                    <% } %>
+            <div class="gall_wrap">
+                <% for(let i =0; i <prdData.length; i++){ %>
+                    <div class="gall_frame">
+                        <a class="imgWrap" href="/menudetail/<%-prdData[i].num%>">
+                            <img src="/upload/<%-prdData[i].thumbnail%>">
+                            <div class="titlebg"><%-prdData[i].name%></div>
+                        </a>
                     </div>
-                </div>
-                <div class="ca_prev"><i class="fa-solid fa-chevron-left"></i></div>
-                <div class="ca_next"><i class="fa-solid fa-chevron-right"></i></div>
+                <% } %>
             </div>
         </div>
     </div>
     <%- include("common/footer.ejs") %>
     <script src="/js/dropdown.js"></script>
     <script src="/js/scroll.js"></script>
-    <script>
-        //캐러셀 움직이는 대상 및 순서 변경 될때 감싸는 부모역할
-        const ca_move = document.querySelector(".ca_move");
-        const prevBtn = document.querySelector(".ca_prev");
-        const nextBtn = document.querySelector(".ca_next");
-    
-        //화면 사이즈에 따라 marginLeft 값 / 원위치 되는 값 변경
-        let prevChangeMargin;
-        let setMargin;
-
-        let browserSizeCheck = ()=>{
-            if(window.matchMedia("screen and (min-width:1601px)").matches){
-                prevChangeMargin = "-50%";
-                setMargin = "-25%";
-            }
-            else if(window.matchMedia("screen and (max-width:1600px) and (min-width:1025px)").matches){
-                prevChangeMargin = "-66.666666%";
-                setMargin = "-33.333333%";
-            }
-            else if(window.matchMedia("screen and (max-width:1024px) and (min-width:769px)").matches){
-                prevChangeMargin = "-100%";
-                setMargin = "-50%";
-            }
-            else if(window.matchMedia("screen and (max-width:768px)").matches){
-                prevChangeMargin = "-200%";
-                setMargin = "-100%";
-            }
-            // 리사이즈 / 로드 했을 때 원위치 되는 값 ca_move에 적용
-            ca_move.style.marginLeft = setMargin;
-        }
-
-        window.addEventListener("resize",()=>{
-            browserSizeCheck(); //웹브라우저 크기 조절시
-        });
-
-        window.addEventListener("load",()=>{
-            browserSizeCheck(); //웹 사이트 화면 로딩 후
-        });
-
-        //prev 클릭시 캐러셀 이동 후 순서 교체 후 원위치 시키는 작업
-        prevBtn.addEventListener("click",function(){
-            ca_move.style.transition = "all 0.5s";
-            ca_move.style.marginLeft = prevChangeMargin;
-            // prevBtn.style.display = "none";
-            // nextBtn.style.display = "none";
-            //이전 버튼 클릭시 첫번째 자식 요소 선택!
-            let fchild = ca_move.firstElementChild;
-            
-            setTimeout(()=>{
-                ca_move.append(fchild);
-                ca_move.style.transition = "none";
-                // prevBtn.style.display = "block";
-                // nextBtn.style.display = "block";
-                ca_move.style.marginLeft = setMargin;
-            },700)
-        });
-        
-        //next 클릭시 캐러셀 이동 후 순서 교체 후 원위치 시키는 작업
-        nextBtn.addEventListener("click",function(){
-            ca_move.style.transition = "all 0.5s";
-            ca_move.style.marginLeft = "0%";
-            // prevBtn.style.display = "none";
-            // nextBtn.style.display = "none";
-            //이후 버튼 클릭시 마지막 자식 요소 선택!
-            let lchild = ca_move.lastElementChild;
-            
-            setTimeout(()=>{
-                ca_move.prepend(lchild);
-                ca_move.style.transition = "none";
-                // prevBtn.style.display = "block";
-                // nextBtn.style.display = "block";
-                ca_move.style.marginLeft = setMargin;
-            },700)
-        });
-        
-    </script>
+    <script src="/js/tapmenu.js"></script>
 </body>
 </html>

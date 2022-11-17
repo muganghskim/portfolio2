@@ -12,17 +12,19 @@
     <div class="newsWrap">
         <div class="center">
             <h2>공지사항</h2>
-            <ul class="news_tapmenu">
+            <ul class="gal_tapmenu">
                 <li><a href="/board">새로운소식</a></li>
                 <li><a href="/board/news">보도자료</a></li>
             </ul>
             <div class="brdWrap">
                 <% for(let i =0; i <brdData.length; i++){ %>
-                    <div class="brdlist">
-                        <div><img src="/upload/<%-brdData[i].thumbnail%>"></div>
-                        <h3><%-brdData[i].name%></h3>
-                        <p><%-brdData[i].time%></p>
-                    </div>
+                        <div class="brdlist">
+                            <a href="/brddetail/<%-brdData[i].num%>">
+                                <div><img src="/upload/<%-brdData[i].thumbnail%>"></div>
+                                <h3><%-brdData[i].name%></h3>
+                                <p><%-brdData[i].time%></p>
+                            </a>
+                        </div>
                 <% } %>
             </div>
         </div>
@@ -30,5 +32,6 @@
     <%- include("common/footer.ejs") %>
     <script src="/js/dropdown.js"></script>
     <script src="/js/scroll.js"></script>
+    <script src="/js/tapmenu.js"></script>
 </body>
 </html>

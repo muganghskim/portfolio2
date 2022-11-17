@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아트 스토리 페이지</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+        <div class="storyWrap">
+            <div class="leftImg" data-aos="fade" data-aos-duration="1000"><img src="/upload/surrealism3.jpg"></div>
+            <div class="rightInfo">
+                <h2  data-aos="fade" data-aos-duration="1000">ART STORY</h2>
+                <h3  data-aos="fade" data-aos-duration="1000" data-aos-delay="100">AI 갤러리<br>인공지능 그리고 예술</h3>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">창작과 이상 기계 위에서<br>높은 퀄리티와 시간을 초월한 속도</p>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">인공지능을 이용하여 발현되는<br>다양한 상상력과 재능</p>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">예술이란 무엇인가?</p>
+            </div>
+        </div>
+        <div class="storyWrap">
+            <div class="leftImg" data-aos="fade" data-aos-duration="1000"><img src="/upload/surrealism5.jpg"></div>
+            <div class="rightInfo">
+                <h2  data-aos="fade" data-aos-duration="1000">Artificial Intelligence</h2>
+                <h3  data-aos="fade" data-aos-duration="1000" data-aos-delay="100">지능을 갖고 있는<br>컴퓨터 시스템</h3>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">컴퓨터로 두뇌를 만들어서<br>우리가 하는 일을 시킬 수 있지 않을까?</p>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">컴퓨터의 발달로<br>이어지는 혁신의 물줄기</p>
+                <p  data-aos="fade" data-aos-duration="1000" data-aos-delay="200">AI란 무엇인가?</p>
+            </div>
+        </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>

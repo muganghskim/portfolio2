@@ -17,37 +17,37 @@
                   <!-- Slides -->
                     <div class="swiper-slide s1">
                         <div class="slide-context">
-                            <!-- <h2 data-aos="fade-left" data-aos-duration="1000">어메스 커피가 당신의 커피를 찾아드립니다.</h2>
-                            <p data-aos="fade-right" data-aos-duration="1000">재미와 감성을 듬뿍 담아낸 맛을 어메스커피에서 찾아보세요.<br> 어메스커피에서만 맛볼 수 있는 다양한 음료들</p>
+                            <h2 data-aos="fade-down" data-aos-duration="1000">AI 갤러리 인공지능 그리고 예술</h2>
+                            <p data-aos="fade-down" data-aos-duration="1000">인공지능을 이용하여 발현되는 다양한 상상력과 재능<br>AI를 사용한 예술이란 무엇인가?</p>
                             <div data-aos="fade-up" data-aos-duration="1000" class="contextBtns">
-                                <a class="getStartBtn" href="#">지금 시작하기</a>
-                                <a class="moreBtn" href="#">더 찾아보기</a>
-                            </div>     -->
+                                <a class="moreBtn" href="/menu/landscape">더 찾아보기</a>
+                            </div>    
                         </div>
+                        <i class="fa-solid fa-computer-mouse"></i>
                     </div>
                     <div class="swiper-slide s2">
                         <div class="slide-context">
-                            <!-- <h2>어메스 커피가 당신의 커피를 찾아드립니다.</h2>
-                            <p>재미와 감성을 듬뿍 담아낸 맛을 어메스커피에서 찾아보세요.<br> 어메스커피에서만 맛볼 수 있는 다양한 음료들</p>
+                            <h2>AI 갤러리 인공지능 그리고 예술</h2>
+                            <p>인공지능을 이용하여 발현되는 다양한 상상력과 재능<br>AI를 사용한 예술이란 무엇인가?</p>
                             <div class="contextBtns">
-                                <a class="getStartBtn" href="#">지금 시작하기</a>
-                                <a class="moreBtn" href="#">더 찾아보기</a>
-                            </div>     -->
+                                <a class="moreBtn" href="/menu/landscape">더 찾아보기</a>
+                            </div> 
                         </div>
+                        <i class="fa-solid fa-computer-mouse"></i>
                     </div>
                     <div class="swiper-slide s3">
                         <div class="slide-context">
-                            <!-- <h2>어메스 커피가 당신의 커피를 찾아드립니다.</h2>
-                            <p>재미와 감성을 듬뿍 담아낸 맛을 어메스커피에서 찾아보세요.<br> 어메스커피에서만 맛볼 수 있는 다양한 음료들</p>
+                            <h2>AI 갤러리 인공지능 그리고 예술</h2>
+                            <p>인공지능을 이용하여 발현되는 다양한 상상력과 재능<br>AI를 사용한 예술이란 무엇인가?</p>
                             <div class="contextBtns">
-                                <a class="getStartBtn" href="#">지금 시작하기</a>
-                                <a class="moreBtn" href="#">더 찾아보기</a>
-                            </div>     -->
+                                <a class="moreBtn" href="/menu/landscape">더 찾아보기</a>
+                            </div>    
                         </div>
+                        <i class="fa-solid fa-computer-mouse"></i>
                     </div>
                 </div>
                 <!-- If we need pagination -->
-                <div class="circleBtn"></div>
+                <!-- <div class="circleBtn"></div> -->
               
                 <!-- If we need navigation buttons -->
                 <!-- <div class="prevBtn naviBtn"><i class="fa-solid fa-angle-left"></i></div>
@@ -71,28 +71,28 @@
             <div class="right-info">
                 <% for(let i =0; i < 3; i++){ %>
                 <% let title = ["풍경화","정물화","초상화"]; %>
+                <% let titleimg = ["Renaissance","stilllife","portrait"]; %>
                 <% let stext = ["자연풍경의 명화를 AI로 만나보자","움직이지 않는 대상을 그린 명화를 AI로 만나보자","사람의 모습을 그린 명화를 AI로 만나보자"]; %>
                 <% let ltext = ["산과 계곡, 나무와 강 그리고 숲 등과 같은 자연 풍경을 그린 그림을 나타내는 용어이다.<br> 특히 주요 주제가 폭넓게 펼쳐진 일관된 구도로 풍경을 그린 것을 말한다."," 정물화란 자연적 환경과는 동떨어진 장소에 움직이지 않는<br>(죽은) 대상을 화가의 미적 시각에 따라 화폭에 담는 그림의 한 형태이다.","특정 인물의 모습을 표현한 그림이나 사진이다. 실제 인물과 유사함이 요구되는 경우나,<br> 화가의 이상이 요구되는 경우도 있다."]; %>
+                <% let icon2text = ["#landscape #4k #high detail","#stilllife #4k #high detail","#portrait #4k #high detail"]; %>
                 <div class="tap-info-view">
                     <h2><%- title[i] %></h2>
                     <p><%- stext[i] %></p>
                     <ul class="tap-icon1">
-                        <li>1</li>
-                        <li>2</li>
+                        <li><img src="/upload/<%-titleimg[i]%>2.jpg"></li>
+                        <li><img src="/upload/<%-titleimg[i]%>3.jpg"></li>
                     </ul>
                     <p class="tap-context"><%- ltext[i] %></p>
                     <ul class="tap-icon2">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
+                        <li>들어간 키워드들</li>
+                        <li><%- icon2text[i] %></li>
                     </ul>
                 </div>
                 <% } %>
             </div>
         </div>
         <div class="ai-message">
-            <h2>AI그림 과연,<br>무엇인가?</h2>
+            <h2 data-aos="fade-up" data-aos-duration="1000">AI그림 과연,<br>무엇인가?</h2>
         </div>
         <div class="ani-bg">
             <img src="/img/anibg.jpg">
@@ -100,8 +100,10 @@
                 <div class="aniWrap">
                     <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
                     <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
+                    <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
                 </div>
                 <div class="aniWrap aniWrap2">
+                    <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
                     <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
                     <span class="ani-text"><img src="/img/ai_icon.png">전시회에서 AI그림에 대해 토론해 보세요</span>
                 </div>
@@ -109,8 +111,8 @@
         </div>
         <div class="donaition">
             <div class="left_count">
-                <h2>AI 갤러리 전시회에서 다양한<br>굿즈를 통한 기부를 즐기세요!</h2>
-                <p>다양한 경로로 사회적 약자들에게 기부 할 수 있습니다.<br>전시회에 참여하여 AI 갤러리와 기부를 함께 하세요.</p>
+                <h2 data-aos="fade-up" data-aos-duration="1000">AI 갤러리 전시회에서 다양한<br>굿즈를 통한 기부를 즐기세요!</h2>
+                <p data-aos="fade-up" data-aos-duration="1000">다양한 경로로 사회적 약자들에게 기부 할 수 있습니다.<br>전시회에 참여하여 AI 갤러리와 기부를 함께 하세요.</p>
                 <!-- 카운트 -->
                 <div class="box box1">
                     <div>
@@ -120,7 +122,7 @@
                         <p class="dona_time">2022.11.10일 기준</p>
                     </div>
                 </div>
-                <button class="moreBtn" type="button">자세히 보기</button>
+                <a class="moreBtn" href="/donaition">자세히 보기</a>
             </div>
             <div class="right_ani">
                 <div class="circle_wrap">
@@ -139,26 +141,35 @@
             </div>
             <div class="right_info">
                 <% for(let i=0; i < 3; i++){ %>
-                <div class="news_list">
-                    <div>
-                        <p>이벤트</p>
-                        <h3>갤러리 참여 및 굿즈 당첨 이벤트</h3>
-                        <p>2022/11/10~2024/11/10</p>
+                <a href="/brddetail/<%-brdData[i].num%>" style="color: #0F5FA6;">
+                    <div class="news_list">
+                        <div>
+                            <p>뉴스</p>
+                            <h3><%- brdData[i].name %></h3>
+                            <p><%- brdData[i].time %></p>
+                        </div>
+                        <div><i class="fa-solid fa-arrow-right-long"></i></div>
                     </div>
-                    <div><i class="fa-solid fa-arrow-right-long"></i></div>
-                </div>
+                </a>
                 <% } %>
             </div>
-            <div class="sns_circle"><i class="fa-solid fa-arrow-right-long"></i><img src="/img/ani_logo.png"></div>
+            <div class="sns_circle"><a href="/board"><i class="fa-solid fa-arrow-right-long"></i></a><img src="/img/ani_logo.png"></div>
         </div>
         <div class="sns">
             <div class="center">
                 <h2><i class="fa-brands fa-instagram"></i>AI 갤러리_명화</h2>
                 <div class="sns_box">
-                    <% for(let i=0; i < 3; i++){ %>
-                        <div class="sns_list">1</div>
-                    <% } %>
+                    <div class="sns_list">
+                        <div class="uploadimg"><img src="/upload/surrealism1.jpg"></div>
+                    </div>
+                    <div class="sns_list">
+                        <div class="uploadimg">전시관에서<br>AI갤러리와<br>함께하세요</div>
+                    </div>
+                    <div class="sns_list">
+                        <div class="uploadimg"><img src="/upload/surrealism2.jpg"></div>
+                    </div>
                 </div>
+                <a class="gostore" href="/store">전시관 찾기</a>
             </div>
         </div>
     </div>
@@ -169,5 +180,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/slide1.js"></script>
     <script src="/js/countUp.js"></script>
+    <script src="/js/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
 </body>
 </html>

@@ -25,6 +25,8 @@
         .opennotitle{
             text-align: center;
             font-size: 35px;
+            margin-top: 150px;
+            margin-bottom: 200px;
         }
         .searchWrap{
             border-top: 1px solid #dfdfdf;
@@ -32,10 +34,32 @@
             display: flex;
             justify-content: center;
             .left_searchMap{
-                width: 40%;
+                width: 460px;
+                position: relative;
                 img{
-                    width: 60%;
+                    width: 460px;
                 }
+                .circle { width:25px; height:25px; background:transparent; background-color: #fff; color: #0F5FA6; border-radius:50%;
+                    display:flex; justify-content:center; align-items:center; font-size:11px; cursor: pointer;
+                }
+                .circle.on{background-color: #0F5FA6; color: #fff;}
+                .circle.seoul { position:absolute; left:180px; top:55px;  }
+                .circle.busan { position:absolute; left:292px; top:227px;  }
+                .circle.deagu { position:absolute; left:274px; top:180px;  }
+                .circle.inchun { position:absolute; left:150px; top:47px;  }
+                .circle.guangzu { position:absolute; left:198px; top:239px;  }
+                .circle.deajun { position:absolute; left:223px; top:176px;  }
+                .circle.ulsan { position:absolute; left:311px; top:194px;  }
+                .circle.seajong { position:absolute; left:212px; top:141px;  }
+                .circle.gunggi { position:absolute; left:207px; top:80px;  }
+                .circle.gangwon { position:absolute; left:260px; top:55px;  }
+                .circle.chungbuk { position:absolute; left:235px; top:114px;  }
+                .circle.chungnam { position:absolute; left:171px; top:128px;  }
+                .circle.junbuk { position:absolute; left:181px; top:187px;  }
+                .circle.junnam { position:absolute; left:163px; top:241px;  }
+                .circle.gungbuk { position:absolute; left:284px; top:139px;  }
+                .circle.gungnam { position:absolute; left:243px; top:218px;  }
+                .circle.jeju { position:absolute; left:127px; top:308px;  }
             }
             .right_search{
                 color: #0F5FA6;

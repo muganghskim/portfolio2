@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아트 스토리 페이지</title>
+    <%- include("common/link.ejs") %>
+</head>
+<body>
+    <%- include("common/header.ejs") %>
+        <div class="grid_wrap">
+        <div class="feature">
+            <h3>주요 작품들</h3>
+            <h2>액자식 갤러리</h2>
+            <p>AI 갤러리의 주력 작품들을 한눈에 확인할 수 있습니다.<br>다양한 액자식 구성을 느껴보고 갤러리를 방문해 주세요.</p>
+        </div>
+        <ul class="boxBtn">
+            <li class="on" data-btn="*"><a href="#">All</a></li>
+            <li data-btn=".art"><a href="#">풍경화</a></li>
+            <li data-btn=".design"><a href="#">초상화</a></li>
+            <li data-btn=".media"><a href="#">정물화</a></li>
+        </ul>
+        <div class="center">
+            <div class="grid">
+                <div class="all art wide">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[1].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all media small">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[9].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all media wide">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[10].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all media big">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[11].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all design small">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[17].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all art wide">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[3].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all design small">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[18].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all design big">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[19].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="all art wide">
+                    <div class="boxWrap">
+                        <a class="imgWrap" href="/menu/landscape">
+                            <img src="/upload/<%-prdData[25].thumbnail%>">
+                            <div class="gogal">갤러리<i class="fa-solid fa-arrow-up"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    <%- include("common/footer.ejs") %>
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/scroll.js"></script>
+    <!-- isotpe init -->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!-- isotope 실행코드 -->
+    <script src="js/isoTest.js"></script>
+</body>
+</html>

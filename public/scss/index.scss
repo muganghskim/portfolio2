@@ -2,28 +2,28 @@
     .cont1{
         .slideWrap{
             width: 100%;
-            height: 869px;
+            height: 90vh;
             .swiper-wrapper{
                 .swiper-slide{
                     background-repeat: no-repeat;
                     background-size: cover; 
                     background-position: center;
-                    // &::before{
-                    //     content: "";
-                    //     position: absolute;
-                    //     width: 100%;
-                    //     height: 100%;
-                    //     background-color: rgba(0,0,0,0.4);
-                    // }
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.4);
+                    }
                     .slide-context{
                         position: absolute;
-                        left: 50%;
+                        left: 45%;
                         top: 50%;
                         transform: translate(-50%,-50%);
-                        text-align: center;
+                        text-align: left;
                         color: #fff;
                         h2{
-                            font-size: 35px;
+                            font-size: 50px;
                             margin-bottom: 40px;
                         }
                         p{
@@ -32,7 +32,7 @@
                         }
                         .contextBtns{
                             display: flex;
-                            justify-content: center;
+                            text-align: center;
                             a{
                                 display: block;
                                 height: 50px;
@@ -40,16 +40,32 @@
                                 line-height: 50px;
                                 margin-right: 5px;
                             }
-                            .getStartBtn{
-                                width: 210px;
-                                background-color: #D99771;
-                            }
                             .moreBtn{
                                 width: 160px;
                                 border: 1px solid #fff;
                                 box-sizing: border-box;
+                                transition: all 0.5s;
+                                &:hover{
+                                    background-color: #0F5FA6;
+                                }
                             }
                         }
+                    }
+                    i{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 50px;
+                        color: #fff;
+                        font-size: 20px;
+                        animation-name: mouseani;
+                        animation-duration: 1s;
+                        animation-timing-function: linear;
+                        animation-iteration-count: infinite;
+                    }
+                    @keyframes mouseani {
+                        0%{bottom: 50px;}
+                        100%{bottom: 30px;}
                     }
                 }
                 .s1{
@@ -64,24 +80,7 @@
             }
         }
         .swiper{
-            .circleBtn{
-                position: absolute; 
-                z-index: 99; 
-                bottom: 50px; 
-                display: flex; 
-                justify-content: center;
-                .swiper-pagination-bullet{
-                    width: 20px; 
-                    height: 20px; 
-                    margin: 0 10px; 
-                    background-color: #fff; 
-                    opacity: 0.8;
-                }
-                .swiper-pagination-bullet-active{
-                    background-color: #0F5FA6; 
-                    opacity: 1;
-                }
-            }
+            
             .naviBtn{
                 position: absolute;
                 top: 50%;
@@ -181,34 +180,33 @@
                 }
                 p{
                     font-size: 20px;
-                    margin-bottom: 150px;
+                    margin-bottom: 100px;
                 }
                 .tap-icon1{
                     display: flex;
                     li{
                         width: 320px;
-                        height: 180px;
                         background-color: #D99771;
                         margin: 0 15px;
-                    }
-                }
-                .tap-icon2{
-                    display: flex;
-                    li{
-                        width: 100px;
-                        height: 100px;
-                        border-radius: 50%;
-                        background-color: #D99771;
-                        margin: 0 15px;
+                        img{
+                            width: 100%;
+                        }
                     }
                 }
                 .tap-context{
-                    margin-top: 150px;
+                    margin-top: 50px;
                     font-size: 15px;
                     line-height: 20px;
                     padding-bottom: 20px;
                     margin-bottom: 50px;
+                    color: #0f60a6a1;
                     border-bottom: 1px solid #0F5FA6;
+                }
+                .tap-icon2{
+                    li{
+                        margin-bottom: 10px;
+                        color: #0f60a69f;
+                    }
                 }
             }
         }
@@ -231,30 +229,30 @@
         }
         .aniWrapBox{
             display: flex;
-            justify-content: center;
-            
         .aniWrap2{
             animation-delay: -10s;
         }
         .aniWrap{
+            display: flex;
+            justify-content: space-around;
             position: absolute;
+            background-color: #f7f6f3;
             overflow: hidden;
+            width: 100%;
             height: 80px;
             animation-name: anitextmove;
             animation-duration: 20s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             .ani-text{
+                width: 32.33333%;
                 img{
                     width: 40px;
                     height: 40px;
-                    margin: 0 20px;
                 }
-                font-size: 40px;
+                font-size: 34px;
                 line-height: 80px;
-                margin-right: 40px;
                 color: #0F5FA6;
-                
             }
             @keyframes anitextmove {
                 0%{transform: translateX(100%);}
@@ -266,12 +264,13 @@
     .donaition{
         display: flex;
         position: relative;
+        background-color: #f7f6f3;
         .left_count{
             width: 50%;
             color: #0F5FA6;
             h2{
                 margin-top: 200px;
-                padding-left: 165px;
+                padding-left: 20%;
                 font-size: 60px;
                 line-height: 75px;
             }
@@ -279,11 +278,11 @@
                 font-size: 20px;
                 margin-top: 50px;
                 line-height: 27px;
-                margin-left: 165px;
+                margin-left: 20%;
                 margin-bottom: 95px;
             }
             .box{
-                margin-left: 165px;
+                margin-left: 20%;
                 width: 768px;
                 height: 300px;
                 border: 1px solid #dfdfdf;
@@ -307,8 +306,9 @@
                 }
             }
             .moreBtn{
+                display: block;
                 margin-top: 48px;
-                margin-left: 165px;
+                margin-left: 20%;
                 width: 190px;
                 height: 60px;
                 background-color: #0F5FA6;
@@ -317,6 +317,15 @@
                 border-radius: 30px;
                 font-size: 20px;
                 margin-bottom: 190px;
+                line-height: 60px;
+                text-align: center;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #f7f6f3;
+                    border: 1px solid #0F5FA6;
+                    color: #0F5FA6;
+                    box-sizing: border-box;
+                }
             }
         }
         .right_ani{
@@ -335,9 +344,14 @@
                     top: 100px;
                     width: 590px;
                     height: 590px;
-                    background-color: #D99771;
                     border-radius: 50%;
                     z-index: 8;
+                    animation-timing-function: ease-in-out;
+                    animation-name: bgChg2; 
+                    animation-duration: 10s; 
+                    animation-iteration-count: infinite;
+                    background-image: url(/upload/grand.jpg);
+                    background-size: cover;
                 }
                 .small_bg{
                     position: absolute;
@@ -346,8 +360,23 @@
                     width: 130px;
                     height: 130px;
                     border-radius: 50%;
-                    background-color: #D99771;
                     z-index: 8;
+                    animation-timing-function: ease-in-out;
+                    animation-name: bgChg; 
+                    animation-duration: 10s; 
+                    animation-iteration-count: infinite;
+                    background-image: url(/upload/Paris.jpg);
+                    background-size: cover;
+                }
+                @keyframes bgChg {
+                    0%{background-image: url(/upload/Paris.jpg);}
+                    50%{background-image: url(/upload/grand.jpg);}
+                    100%{background-image: url(/upload/Paris.jpg);}
+                }
+                @keyframes bgChg2 {
+                    0%{background-image: url(/upload/grand.jpg);}
+                    50%{background-image: url(/upload/Paris.jpg);}
+                    100%{background-image: url(/upload/grand.jpg);}
                 }
             }
             .circle_line{
@@ -373,6 +402,7 @@
         display: flex;
         color: #0F5FA6;
         position: relative;
+        background-color: #f7f6f3;
         .sns_circle{
             position: absolute;
             left: 75px;
@@ -383,6 +413,14 @@
                 top: 50%;
                 transform: translate(-50%,-50%);
                 font-size: 40px;
+                z-index: 9;
+                color: #0F5FA6;
+                transition: all 0.5s;
+            }
+            &:hover{
+                i{
+                    transform: translate(-50%,-50%) scale(1.3);
+                }
             }
             img{
                 animation-name: move_sns_logo;
@@ -418,20 +456,31 @@
                     margin: 20px 0;
                     font-size: 22px;
                 }
+                p{
+                    color: #0f60a691;
+                }
                 i{
                     font-size: 40px;
+                    transition: all 0.5s;
                 }
                 &:last-child{
                     border-bottom: 1px solid #dfdfdf;
+                }
+                &:hover{
+                    i{
+                        transform: translateX(-50px);
+                    }
                 }
             }
         }
     }
     .sns{
-        height: 100vh;
+        background-color: #f7f6f3;
         .center{
             width: 1200px;
-            margin: 330px auto 200px;
+            padding-top: 330px;
+            margin: 0 auto;
+            padding-bottom: 200px;
             h2{
                 text-align: center;
                 font-size: 45px;
@@ -445,8 +494,55 @@
                 display: flex;
                 justify-content: space-between;
                 .sns_list{
-                    width:31%;
-                    background-color: #D99771;
+                    position: relative;
+                    width:350px;
+                    height: 350px;
+                    &:nth-child(3){
+                        background-color: #0f60a613;
+                    }
+                    &:nth-child(1){
+                        position: relative;
+                        background-image: linear-gradient(rgba(355,355,355,0.6),rgba(355,355,355,0.6)),url(/img/sns_box1.png);
+                    }
+                    &:nth-child(2){
+                        position: relative;
+                        background-image: linear-gradient(rgba(355,355,355,0.6),rgba(355,355,355,0.6)),url(/img/sns_box2.png);
+                    }
+                    .uploadimg{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 3;
+                        transform: translate(-50%,-50%);
+                        text-align: center;
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #0F5FA6;
+                        line-height: 35px;
+                        img{
+                            width: 250px;
+                            height: 250px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .gostore{
+                display: block;
+                width: 150px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 25px;
+                background-color: #0F5FA6;
+                color: #fff;
+                margin: 100px auto 0;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #f7f6f3;
+                    border: 1px solid #0F5FA6;
+                    color: #0F5FA6;
+                    box-sizing: border-box;
                 }
             }
         }

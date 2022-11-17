@@ -2,3 +2,47 @@
   display: flex;
   flex-wrap: wrap;
 }
+.prdwrap .list {
+  text-align: center;
+}
+.prdwrap .list .btns {
+  display: flex;
+  justify-content: center;
+}
+.prdwrap .list .btns .upt {
+  width: 50px;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  margin-right: 15px;
+}
+.prdwrap .list .btns .del {
+  display: block;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  background-color: red;
+  color: #fff;
+}
+.prdwrap .prdupt {
+  display: none;
+  flex-direction: column;
+  width: 100px;
+  padding: 20px;
+  padding-left: unset;
+  margin-right: 15px;
+}
+.prdwrap .prdupt input, .prdwrap .prdupt select, .prdwrap .prdupt textarea, .prdwrap .prdupt button {
+  margin-bottom: 10px;
+}
+
+.insert {
+  width: 500px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+}
+.insert input, .insert select, .insert textarea, .insert button {
+  margin-bottom: 25px;
+  height: 50px;
+}

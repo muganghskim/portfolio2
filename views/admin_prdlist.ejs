@@ -26,11 +26,31 @@
             <p><%-prdData[i].name%></p>
             <p><%-prdData[i].category%></p>
             <img src="/upload/<%-prdData[i].thumbnail%>">
+            <div class="btns">
+                <div class="upt">수정</div>
+                <a class="del" href="/prdlist/delete/<%-prdData[i].num%>">삭제</a>
+            </div>
         </div>
+        <form class="prdupt" enctype="multipart/form-data" action="/upt/prdlist" method="post">
+            <input type="hidden" name="id" value="<%-prdData[i].num%>">
+            <select name="category">
+                <option value="풍경화">풍경화</option>
+                <option value="정물화">정물화</option>
+                <option value="초상화">초상화</option>
+                <option value="초현실주의">초현실주의</option>
+                <option value="르네상스">르네상스</option>
+            </select>
+            <input type="text" name="name" value="<%-prdData[i].name%>">
+            <textarea name="context"><%-prdData[i].conext%></textarea>
+            <input type="file" name="thumbnail">
+            <input type="hidden" name="originfile" value="<%- prdData[i].thumbnail %>">
+            <button type="submit">상품수정</button>
+            <button class="cancel" type="button">취소</button>
+        </form>
         <% } %>
     </div>
     <!-- 상품을 등록하는 form태그 구간 -->
-    <form enctype="multipart/form-data" action="/add/prdlist" method="post">
+    <form class="insert" enctype="multipart/form-data" action="/add/prdlist" method="post">
         <select name="category">
             <option value="풍경화">풍경화</option>
             <option value="정물화">정물화</option>
@@ -43,5 +63,27 @@
         <input type="file" name="thumbnail">
         <button type="submit">상품등록</button>
     </form>
+    <script>
+        const uptBtns = document.querySelectorAll(".upt");
+        const delBtns = document.querySelectorAll(".del");
+        const uptForms = document.querySelectorAll(".prdupt");
+        const cancelBtns = document.querySelectorAll(".cancel");
+        uptBtns.forEach(function(item,index){
+            item.addEventListener("click",function(){
+                uptForms[index].style.display = "flex";
+            });
+
+            cancelBtns[index].addEventListener("click",function(){
+                uptForms[index].style.display = "none";
+            });
+
+            delBtns[index].addEventListener("click",function(e){
+                let a = window.confirm("진짜로 삭제 하시겠습니까?");
+                if(!a){
+                    e.preventDefault();
+                }
+            });
+        }); 
+    </script>
 </body>
 </html>

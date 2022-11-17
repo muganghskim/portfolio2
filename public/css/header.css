@@ -22,7 +22,7 @@
   position: absolute;
   left: -100%;
   top: 100px;
-  width: 300%;
+  width: 500%;
   height: 0px;
   z-index: 8;
   transition: all 0.5s;
@@ -61,6 +61,9 @@
 #header .center .gnbWrap .gnb > li .depth li:last-child {
   margin-bottom: 50px;
 }
+#header .center .gnbWrap .gnb > li .depth li:hover {
+  font-weight: bold;
+}
 #header .center .galBtn {
   margin-top: 30px;
   margin-left: 100px;
@@ -74,6 +77,13 @@
   line-height: 40px;
   border-radius: 20px;
   text-align: center;
+  transition: all 0.5s;
+}
+#header .center .galBtn a:hover {
+  background-color: #f7f6f3;
+  border: 1px solid #0F5FA6;
+  color: #0F5FA6;
+  box-sizing: border-box;
 }
 #header .center .h-icon {
   display: flex;

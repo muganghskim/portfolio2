@@ -1,0 +1,384 @@
+.storyWrap {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f6f3;
+}
+.storyWrap .leftImg {
+  width: 50%;
+}
+.storyWrap .leftImg img {
+  width: 100%;
+}
+.storyWrap .rightInfo {
+  width: 50%;
+  padding: 100px;
+  box-sizing: border-box;
+  color: #0F5FA6;
+}
+.storyWrap .rightInfo h2 {
+  font-size: 65px;
+  margin-bottom: 100px;
+}
+.storyWrap .rightInfo h3 {
+  font-size: 45px;
+  line-height: 55px;
+  margin-bottom: 50px;
+}
+.storyWrap .rightInfo p {
+  color: rgba(15, 96, 166, 0.5607843137);
+  font-size: 20px;
+  margin-bottom: 50px;
+  line-height: 30px;
+}
+
+.grid_wrap {
+  background-color: #f7f6f3;
+}
+.grid_wrap .feature {
+  text-align: center;
+}
+.grid_wrap .feature h3 {
+  padding: 120px 0 33px 0;
+  color: #0F5FA6;
+}
+.grid_wrap .feature h2 {
+  padding-bottom: 38px;
+  font-size: 35px;
+  color: #0F5FA6;
+}
+.grid_wrap .feature p {
+  margin-bottom: 70px;
+  color: rgba(15, 96, 166, 0.5607843137);
+  line-height: 1.2;
+}
+.grid_wrap .boxBtn {
+  display: flex;
+  justify-content: center;
+}
+.grid_wrap .boxBtn li::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  background-color: #acacac;
+  margin: 0 15px;
+}
+.grid_wrap .boxBtn li:last-child::after {
+  display: none;
+}
+.grid_wrap .boxBtn li a {
+  color: rgba(15, 96, 166, 0.5764705882);
+}
+.grid_wrap .boxBtn li.on a {
+  color: #0F5FA6;
+}
+.grid_wrap .boxBtn li:hover a {
+  color: #0F5FA6;
+}
+.grid_wrap .center {
+  width: 85%;
+  margin: 55px auto 0;
+  padding-bottom: 150px;
+}
+.grid_wrap .center .grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid_wrap .center .grid .all {
+  position: relative;
+  width: 23%;
+  margin: 1%;
+}
+.grid_wrap .center .grid .all .boxWrap {
+  padding: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border: 10px solid;
+  border-bottom-color: #0F5FA6;
+  border-top-color: rgba(15, 96, 166, 0.5764705882);
+  border-left-color: rgba(15, 96, 166, 0.5764705882);
+  border-right-color: #0F5FA6;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.5) inset;
+  transition: all 0.5s;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap:hover img {
+  transform: scale(1.2);
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap:hover .gogal {
+  bottom: 50%;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap:hover::before {
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap .gogal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  height: 0;
+  z-index: 9;
+  color: #fff;
+  transition: all 0.5s;
+  font-size: 20px;
+}
+.grid_wrap .center .grid .all .boxWrap .imgWrap .gogal i {
+  margin-left: 10px;
+}
+.grid_wrap .center .grid .small .boxWrap {
+  height: 500px;
+}
+.grid_wrap .center .grid .big .boxWrap {
+  height: 300px;
+}
+.grid_wrap .center .grid .wide .boxWrap {
+  height: 300px;
+}
+
+.donaitionWrap {
+  display: flex;
+  justify-content: center;
+  background-color: #0F5FA6;
+}
+.donaitionWrap .leftInfo {
+  width: 50%;
+  padding: 170px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.donaitionWrap .leftInfo h2 {
+  font-size: 65px;
+  margin-top: 100px;
+  line-height: 110px;
+}
+.donaitionWrap .leftInfo h2 span {
+  font-weight: normal;
+  font-size: 55px;
+}
+.donaitionWrap .rightImg {
+  width: 50%;
+}
+.donaitionWrap .rightImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.donaitionCount {
+  display: flex;
+  position: relative;
+  background-color: #f7f6f3;
+  padding-top: 400px;
+  padding-bottom: 50px;
+}
+.donaitionCount .leftInfo {
+  width: 50%;
+}
+.donaitionCount .leftInfo h2 {
+  color: #0F5FA6;
+  margin-top: 200px;
+  padding-left: 20%;
+  font-size: 60px;
+  line-height: 75px;
+}
+.donaitionCount .leftInfo > p {
+  color: #0F5FA6;
+  font-size: 20px;
+  margin-top: 50px;
+  line-height: 27px;
+  margin-left: 20%;
+  margin-bottom: 95px;
+}
+.donaitionCount .right_count {
+  width: 50%;
+  color: #0F5FA6;
+}
+.donaitionCount .right_count .box {
+  margin-top: 200px;
+  width: 768px;
+  height: 300px;
+  border: 1px solid #dfdfdf;
+}
+.donaitionCount .right_count .box .achieve {
+  margin-top: 40px;
+  margin-left: 60px;
+  font-size: 23px;
+  margin-bottom: 38px;
+}
+.donaitionCount .right_count .box .count {
+  font-size: 100px;
+  margin-left: 60px;
+  font-weight: 700;
+}
+.donaitionCount .right_count .box .price {
+  font-size: 26px;
+}
+.donaitionCount .right_count .box .dona_time {
+  margin-top: 35px;
+  margin-left: 60px;
+}
+.donaitionCount .top_ani {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 100px;
+}
+.donaitionCount .top_ani .circle_wrap {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+.donaitionCount .top_ani .circle_wrap .small_bg1 {
+  position: absolute;
+  left: -60px;
+  top: 130px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: 8;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: bgChg2;
+          animation-name: bgChg2;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: url(/upload/grand.jpg);
+  background-size: cover;
+}
+.donaitionCount .top_ani .circle_wrap .small_bg2 {
+  position: absolute;
+  left: 330px;
+  top: 130px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: 8;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: bgChg;
+          animation-name: bgChg;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: url(/upload/Paris.jpg);
+  background-size: cover;
+}
+@-webkit-keyframes bgChg {
+  0% {
+    background-image: url(/upload/Paris.jpg);
+  }
+  50% {
+    background-image: url(/upload/grand.jpg);
+  }
+  100% {
+    background-image: url(/upload/Paris.jpg);
+  }
+}
+@keyframes bgChg {
+  0% {
+    background-image: url(/upload/Paris.jpg);
+  }
+  50% {
+    background-image: url(/upload/grand.jpg);
+  }
+  100% {
+    background-image: url(/upload/Paris.jpg);
+  }
+}
+@-webkit-keyframes bgChg2 {
+  0% {
+    background-image: url(/upload/grand.jpg);
+  }
+  50% {
+    background-image: url(/upload/Paris.jpg);
+  }
+  100% {
+    background-image: url(/upload/grand.jpg);
+  }
+}
+@keyframes bgChg2 {
+  0% {
+    background-image: url(/upload/grand.jpg);
+  }
+  50% {
+    background-image: url(/upload/Paris.jpg);
+  }
+  100% {
+    background-image: url(/upload/grand.jpg);
+  }
+}
+.donaitionCount .top_ani .circle_line {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 2px solid #0F5FA6;
+  border-radius: 50%;
+}
+.donaitionCount .top_ani .circle_small {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-name: move_circle2;
+          animation-name: move_circle2;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.donaitionCount .top_ani .circle_small .circle_move {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0F5FA6;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -11px;
+}
+@-webkit-keyframes move_circle2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move_circle2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

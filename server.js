@@ -34,7 +34,9 @@ MongoClient.connect("mongodb+srv://admin:qwer1234@cluster0.6lrvtzo.mongodb.net/?
 
 //메인페이지 get 요청
 app.get("/",function(req,res){
-    res.render("index");
+  db.collection("brdlist").find({}).toArray(function(err,result){
+    res.render("index",{brdData:result});
+  });
 });
 
 //  /loginresult 경로 요청시 passport.autenticate() 함수구간이 아이디 비번 로그인 검증구간
@@ -105,6 +107,43 @@ app.get("/menu/portrait",function(req,res){
   });
 });
 
+//갤러리 상세페이지
+app.get("/menudetail/:no",function(req,res){
+  db.collection("prdlist").findOne({num:Number(req.params.no)},function(err,result1){
+    //전체 num 데이터 하나 꺼내오고
+      db.collection("prdlist").find({category:result1.category}).toArray(function(err,result2){
+          //prdlist 카테고리에 맞는 목록 꺼내오기
+          res.render("menudetail",{prdData1:result1,userData:req.user,prdData2:result2});
+      });
+  });
+});
+
+//뉴스 상세페이지
+app.get("/brddetail/:no",function(req,res){
+  db.collection("brdlist").findOne({num:Number(req.params.no)},function(err,result){
+    //전체 num 데이터 하나 꺼내오고
+      res.render("brddetail",{brdData:result,userData:req.user});
+  });
+});
+
+//아트스토리 페이지 
+app.get("/story",function(req,res){
+    res.render("story");
+});
+
+//사회적 기부 페이지 
+app.get("/donaition",function(req,res){
+  res.render("donaition");
+});
+
+//주요 작품 페이지 
+app.get("/frame",function(req,res){
+  db.collection("prdlist").find().toArray(function(err,result){
+    res.render("frame",{prdData:result});
+  });
+});
+
+
 //초현실주의 메뉴 페이지
 app.get("/menu/surrealism",function(req,res){
   db.collection("prdlist").find({category:"초현실주의"}).toArray(function(err,result){
@@ -131,8 +170,9 @@ app.get("/storeopen",function(req,res){
 })
 
 //주소로 검색시(사용자)
-app.get("/search/local",function(req,res){
+app.get("/store/search/local",function(req,res){
   // 시 / 도 선택시
+
   if(req.query.city1 !== "" && req.query.city2 === ""){
     db.collection("storelist").find({sido:req.query.city1}).toArray(function(err,result){
       res.render("store",{storeData:result});
@@ -151,7 +191,7 @@ app.get("/search/local",function(req,res){
 });
 
 //매장명으로 검색시 (사용자)
-app.get("/search/storename",function(req,res){
+app.get("/store/search/storename",function(req,res){
   
   // query : <-- store.ejs 파일에서 input name 값
   // path: <-- db storelist 콜렉션에서 name 
@@ -301,5 +341,47 @@ app.post("/add/brdlist",upload.single('thumbnail'),function(req,res){
         res.redirect("/admin/brdlist");
       });
     });
+  });
+});
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+// 수정
+
+//상품 업데이트
+app.post("/upt/prdlist",upload.single('thumbnail'),function(req,res){
+  //db에 수정된 데이터 업데이트
+  //첨부파일을 했다면 해당 파일의 파일명
+  if(req.file){
+      fileUpload = req.file.originalname;
+  }
+  else{
+      fileUpload = req.body.originfile;
+  }
+
+  db.collection("prdlist").updateOne({num:Number(req.body.id)},{
+      $set:{
+        name:req.body.name,
+        conext:req.body.context,
+        thumbnail:fileUpload,
+        category:req.body.category   
+      }
+  },function(err,result){
+      res.redirect("/admin/prdlist");
+  });
+});
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+// 삭제
+
+
+//상품 삭제 페이지
+app.get("/prdlist/delete/:no",function(req,res){
+  //db안에 데이터 삭제
+  db.collection("prdlist").deleteOne({num:Number(req.params.no)},function(err,result){
+      res.redirect("/admin/prdlist");
   });
 });

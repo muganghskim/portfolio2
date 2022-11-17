@@ -1,0 +1,325 @@
+//아트스토리
+.storyWrap{
+    display: flex;
+    justify-content: center;
+    background-color: #f7f6f3;
+    .leftImg{
+        width: 50%;
+        img{
+            width: 100%;
+        }
+    }
+    .rightInfo{
+        width: 50%;
+        padding: 100px;
+        box-sizing: border-box;
+        color: #0F5FA6;
+        h2{
+            font-size: 65px;
+            margin-bottom: 100px;
+        }
+        h3{
+            font-size: 45px;
+            line-height: 55px;
+            margin-bottom: 50px;
+        }
+        p{
+            color: #0f60a68f;
+            font-size: 20px;
+            margin-bottom: 50px;
+            line-height: 30px;
+        }
+    }
+}
+
+//주요 작품
+.grid_wrap{
+    background-color: #f7f6f3;
+.feature{
+    text-align: center;
+    h3{
+        padding: 120px 0 33px 0;
+        color: #0F5FA6;
+    }
+    h2{
+        padding-bottom: 38px;
+        font-size: 35px;
+        color: #0F5FA6;
+    }
+    p{
+        margin-bottom: 70px;
+        color: #0f60a68f;
+        line-height: 1.2;
+    }
+}
+.boxBtn{
+    display: flex;
+    justify-content: center;
+    li::after{
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 12px;
+        background-color: #acacac;
+        margin: 0 15px;
+    }
+    li:last-child::after{
+        display: none;
+    }
+    li{
+        a{
+            color: #0f60a693;
+        }
+    }
+    li.on{
+        a{
+            color: #0F5FA6;
+        }
+    }
+    li:hover{
+        a{
+            color: #0F5FA6;
+        }
+    }
+}
+.center{
+    width: 85%;
+    margin: 55px auto 0;
+    padding-bottom: 150px;
+    .grid{
+        display: flex;
+        flex-wrap: wrap;
+        .all{
+            position: relative;
+            width: 23%;
+            margin: 1%;
+            .boxWrap{
+                padding: 20px;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                border: 10px solid;
+                border-bottom-color: #0F5FA6;
+                border-top-color: #0f60a693;
+                border-left-color: #0f60a693;
+                border-right-color: #0F5FA6;
+                .imgWrap{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.5) inset;
+                        transition: all 0.5s;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        transition: all 0.5s;
+                    }
+                    &:hover{
+                        img{
+                            transform: scale(1.2);
+                        }
+                        .gogal{
+                            bottom: 50%;
+                        }
+                    }
+                    &:hover::before{
+                        z-index: 8;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                    .gogal{
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        display: flex;
+                        justify-content: center;
+                        height: 0;
+                        z-index: 9;
+                        color: #fff;
+                        transition: all 0.5s;
+                        font-size: 20px;
+                        i{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .small{
+            .boxWrap{
+                height: 500px;
+            }
+        }
+        .big{
+            .boxWrap{
+                height: 300px;
+            }
+        }
+        .wide{
+            .boxWrap{
+                height: 300px;
+            }
+        }
+    }
+}
+}
+
+
+//도네이션
+.donaitionWrap{
+    display: flex;
+    justify-content: center;
+    background-color: #0F5FA6;
+    .leftInfo{
+        width: 50%;
+        padding: 170px;
+        box-sizing: border-box;
+        color: #fff;
+        h2{
+            font-size: 65px;
+            margin-top: 100px;
+            line-height: 110px;
+            span{
+                font-weight: normal;
+                font-size: 55px;
+            }
+        }
+    }
+    .rightImg{
+        width: 50%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+}
+.donaitionCount{
+    display: flex;
+    position: relative;
+    background-color: #f7f6f3;
+    padding-top: 400px;
+    padding-bottom: 50px;
+    .leftInfo{
+        width: 50%;
+        h2{
+            color: #0F5FA6;
+            margin-top: 200px;
+            padding-left: 20%;
+            font-size: 60px;
+            line-height: 75px;
+        }
+        > p {
+            color: #0F5FA6;
+            font-size: 20px;
+            margin-top: 50px;
+            line-height: 27px;
+            margin-left: 20%;
+            margin-bottom: 95px;
+        }
+    }
+    .right_count{
+        width: 50%;
+        color: #0F5FA6;
+        .box{
+            margin-top: 200px;
+            width: 768px;
+            height: 300px;
+            border: 1px solid #dfdfdf;
+            .achieve{
+                margin-top: 40px;
+                margin-left: 60px;
+                font-size: 23px;
+                margin-bottom: 38px;
+            }
+            .count{
+                font-size: 100px;
+                margin-left: 60px;
+                font-weight: 700;
+            }
+            .price{
+                font-size: 26px;
+            }
+            .dona_time{
+                margin-top: 35px;
+                margin-left: 60px;
+            }
+        }
+    }
+    .top_ani{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 100px;
+        .circle_wrap{
+            width: 400px; height: 400px; 
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            .small_bg1{
+                position: absolute;
+                left: -60px;
+                top: 130px;
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                z-index: 8;
+                animation-timing-function: ease-in-out;
+                animation-name: bgChg2; 
+                animation-duration: 10s; 
+                animation-iteration-count: infinite;
+                background-image: url(/upload/grand.jpg);
+                background-size: cover;
+            }
+            .small_bg2{
+                position: absolute;
+                left: 330px;
+                top: 130px;
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                z-index: 8;
+                animation-timing-function: ease-in-out;
+                animation-name: bgChg; 
+                animation-duration: 10s; 
+                animation-iteration-count: infinite;
+                background-image: url(/upload/Paris.jpg);
+                background-size: cover;
+            }
+            @keyframes bgChg {
+                0%{background-image: url(/upload/Paris.jpg);}
+                50%{background-image: url(/upload/grand.jpg);}
+                100%{background-image: url(/upload/Paris.jpg);}
+            }
+            @keyframes bgChg2 {
+                0%{background-image: url(/upload/grand.jpg);}
+                50%{background-image: url(/upload/Paris.jpg);}
+                100%{background-image: url(/upload/grand.jpg);}
+            }
+        }
+        .circle_line{
+            width: 100%; height: 100%; position: absolute; left: 0; top: 0;
+            border: 2px solid #0F5FA6; border-radius: 50%;
+        }
+        .circle_small{
+            width: 100%; height: 100%; position: absolute; left: 0;top: 0;
+            border-radius: 50%; animation-timing-function: linear;
+            animation-name: move_circle2; animation-duration: 5s; animation-iteration-count: infinite;
+            .circle_move{
+                width: 20px; height: 20px; border-radius: 50%; background: #0F5FA6;
+                position: absolute;left: 50%; transform: translateX(-50%); top: -11px;
+            }
+        }
+        @keyframes move_circle2 {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+    }
+}
