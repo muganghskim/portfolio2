@@ -159,9 +159,40 @@ app.get("/menu/renaissance",function(req,res){
 });
 
 //매장 검색 페이지(사용자)
-app.get("/store",function(req,res){
-  db.collection("storelist").find({}).toArray(function(err,result){
-    res.render("store",{storeData:result});
+app.get("/store",async function(req,res){
+  //사용자가 게시판에 접속 시 몇번 페이징 번호로 접속했는지 체크
+  let pageNumber = (req.query.page == null) ? 1 : Number(req.query.page);
+  // 한 페이지당 보여줄 데이터 갯수
+  let perPage = 2;
+  // 한 블록당 보여줄 페이징 번호 갯수
+  let blockCount = 3;
+  // 현재 페이지 블록 구하기 
+  let blockNum = Math.ceil(pageNumber / blockCount);
+  //블록안에 있는 페이징의 시작번호값 알아내기
+  let blockStart = ((blockNum - 1) * blockCount) + 1;
+  //블록안에 있는 페이징의 끝번호값 알아내기
+  let blockEnd = blockStart + blockCount - 1;
+  //데이터 베이스 콜렉션에 있는 전체 객체의 갯수값 가져오는 명령어
+  let totalData = await db.collection("storelist").countDocuments({});
+  //전체 데이터 값을 통해서 몇개의 페이징 번호가 만들어져야 하는지
+  let paging = Math.ceil(totalData / perPage);
+  //만약 블록안에있는 페이징의 끝 번호값이 전체 페이징 갯수보다 많다면 강제로 마지막 페이징 번호값으로 변경
+  if(blockEnd > paging){
+      blockEnd = paging;
+  }
+  //블록의 총 갯수
+  let totalBlock = Math.ceil(paging / blockCount);
+  //데이터베이스에 실제 값을 꺼내기 위해 몇개씩 꺼내올건지 설정 sort / skip / limit
+  let startFrom = (pageNumber - 1) * perPage
+  db.collection("storelist").find({}).skip(startFrom).limit(perPage).toArray(function(err,result){
+    res.render("store",{storeData:result,
+                        paging:paging,
+                        pageNumber:pageNumber,
+                        blockStart:blockStart,
+                        blockEnd:blockEnd,
+                        blockNum:blockNum,
+                        totalBlock:totalBlock
+    });
   });
 });
 
@@ -172,16 +203,16 @@ app.get("/storeopen",function(req,res){
 //주소로 검색시(사용자)
 app.get("/store/search/local",function(req,res){
   // 시 / 도 선택시
-
+  let pageNumber = "nopage";
   if(req.query.city1 !== "" && req.query.city2 === ""){
     db.collection("storelist").find({sido:req.query.city1}).toArray(function(err,result){
-      res.render("store",{storeData:result});
+      res.render("store",{storeData:result,pageNumber:pageNumber});
     });
   }
   // 시/도 구/군 선택시
   else if(req.query.city1 !== "" && req.query.city2 !== ""){
     db.collection("storelist").find({sido:req.query.city1,sigugun:req.query.city2}).toArray(function(err,result){
-      res.render("store",{storeData:result});
+      res.render("store",{storeData:result,pageNumber:pageNumber});
     });
   }
   // 아무것도 선택하지 않았을 때
@@ -192,7 +223,7 @@ app.get("/store/search/local",function(req,res){
 
 //매장명으로 검색시 (사용자)
 app.get("/store/search/storename",function(req,res){
-  
+  let pageNumber = "nopage";
   // query : <-- store.ejs 파일에서 input name 값
   // path: <-- db storelist 콜렉션에서 name 
   let storeSearch = [
@@ -209,7 +240,7 @@ app.get("/store/search/storename",function(req,res){
   //검색어 입력시
   if(req.query.name !== ""){
     db.collection("storelist").aggregate(storeSearch).toArray(function(err,result){
-      res.render("store",{storeData:result});
+      res.render("store",{storeData:result,pageNumber:pageNumber});
     });
   }
   //검색어 미입력시

@@ -137,3 +137,7 @@
         text-overflow: ellipsis;
     }
 }
+.paging {display: flex; justify-content: center; margin-top: 20px;}
+.paging li{margin: 0 15px; color: #0F5FA6;}
+.paging li.highlight a {color: #0F5FA6;}
+.paging li a {color: #0f60a673;}

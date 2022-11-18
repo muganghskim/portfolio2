@@ -13,7 +13,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        background-color: rgba(0,0,0,0.4);
+                        background-color: rgba(0,0,0,0.2);
                     }
                     .slide-context{
                         position: absolute;
@@ -107,7 +107,7 @@
         }
     }
     .cont2{
-        height: 100vh;
+      
         display: flex;
         background-color: #f7f6f3;
         .left-gallery{
@@ -119,7 +119,7 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0,0,0,0.4);
+                background-color: rgba(0,0,0,0.2);
                 z-index: 8;
             }
             img{

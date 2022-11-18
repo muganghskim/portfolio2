@@ -85,7 +85,37 @@
         <input id="searchResult" type="hidden" value="<%- storeData[i].sido %>">
     <% }} %>
         </div>
+    <!-- 페이징 번호 생성된 구간 -->
+    <% if(pageNumber != "nopage"){ %>
+        <ul class="paging">
+            <% if(pageNumber <= 1){ %>
+                <li>처음</li>
+            <% } else { %>
+                <li><a href="?page=1">처음</a></li>
+            <% } %>
+            <% if(blockStart > totalBlock){ %>
+                <li><a href="?page=<%- blockStart - 1 %>">이전</a></li>
+            <% } %>
+            <% for(let i = blockStart; i <= blockEnd; i++){ %>
+                <% if(pageNumber == i){ %>
+                <li class="highlight"><a href="?page=<%- i %>"><%- i %></a></li>
+                <% } else { %>
+                <li><a href="?page=<%- i %>"><%- i %></a></li>
+                <% } %>
+            <% } %>
+            <% if(blockNum < totalBlock){ %>
+                <li><a href="?page=<%- blockEnd + 1 %>">다음</a></li>
+            <% } %>
+            <% if(pageNumber >= paging){ %>
+                <li>마지막</li>
+            <% } else { %>
+                <li><a href="?page=<%- paging %>">마지막</a></li>
+            <% } %>
+        </ul>
+    <% } %>
     </div>
+    
+    
     
     
     <%- include("common/footer.ejs") %>
@@ -125,11 +155,12 @@
                 local.submit(); //form태그 데이터 전송
             });
         });
-        
-        let searchResult = document.querySelector("#searchResult");
-        if(searchResult.value == "경기"){
-            circles[8].classList.add("on");
-        }
+
+        circles.forEach(function(item,index){
+            if(decodeURI(window.location.search).includes(item.getAttribute("data-name"))){
+                item.classList.add("on");
+            }
+        });
         
     </script>
     <script>history.replaceState({}, null, "/store");</script>
