@@ -46,3 +46,15 @@
   margin-bottom: 25px;
   height: 50px;
 }
+
+.storewrap .list {
+  display: flex;
+  border: 1px solid #000;
+}
+.storewrap .list .line {
+  display: flex;
+  border-right: 1px solid #000;
+}
+.storewrap .list .line > div {
+  margin: 0 5px;
+}

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 매장등록 페이지</title>
+    <link rel="stylesheet" href="/css/admin_prdlist.css">
 </head>
 <body>
     <!-- 상품등록 페이지 a / 매장등록 페이지 a -->
@@ -17,27 +18,31 @@
     <!-- 등록된 매장 정보 전부 보이는 구간 -->
     <div class="storewrap">
         <% for(let i = 0; i < storeData.length; i++){ %>
-        <div class="list" style="margin-bottom: 50px;">
+        <div class="list" style="margin-bottom: 10px;">
             <div class="line">
-                <div>매장번호</div>
+                <div>매장번호 :</div>
                 <div><%- storeData[i].num %></div>
             </div>
             <div class="line">
-                <div>매장명</div>
+                <div>매장명 :</div>
                 <div><%- storeData[i].name %></div>
             </div>
             <div class="line">
-                <div>지역</div>
+                <div>지역 :</div>
                 <div><%- storeData[i].sido %></div>
                 <div><%- storeData[i].sigugun %></div>
             </div>
             <div class="line">
-                <div>매장주소</div>
+                <div>매장주소 :</div>
                 <div><%- storeData[i].adress %></div>
             </div>
             <div class="line">
-                <div>매장전화번호</div>
+                <div>매장전화번호 :</div>
                 <div><%- storeData[i].phone %></div>
+            </div>
+            <div class="line">
+                <div class="upt">수정</div>
+                <a class="del" href="#">삭제</a>
             </div>
         </div>
         <% } %>

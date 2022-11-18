@@ -45,3 +45,17 @@
         height: 50px;
     }
 }
+
+.storewrap{
+    .list{
+        display: flex;
+        border: 1px solid #000;
+        .line{
+            display: flex;
+            border-right: 1px solid #000;
+            > div{
+                margin: 0 5px;
+            }
+        }
+    }
+}
