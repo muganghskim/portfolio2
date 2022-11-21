@@ -3,7 +3,7 @@
   padding: 100px 0;
 }
 .storeWrap .center {
-  width: 76%;
+  width: 80%;
   margin: 0 auto;
 }
 .storeWrap .center h2 {
@@ -239,4 +239,34 @@
 
 .paging li a {
   color: rgba(15, 96, 166, 0.4509803922);
+}
+
+@media screen and (max-width: 1600px) {
+  .storelistheader {
+    width: 100%;
+  }
+  .storelist {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .storeWrap .center h2 {
+    margin-left: 15px;
+  }
+  .storeWrap .center .searchWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  .storeWrap .center .searchWrap .right_search .namesearch {
+    margin-bottom: 30px;
+  }
+  .storelist .line div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 100px;
+    line-height: 1.4;
+    white-space: normal;
+  }
 }

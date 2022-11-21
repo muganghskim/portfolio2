@@ -67,3 +67,38 @@
   line-height: 50px;
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 1000px) {
+  #footer .center {
+    width: 80%;
+  }
+  #footer #scTop {
+    right: 35px;
+  }
+}
+@media screen and (max-width: 730px) {
+  #footer .center {
+    width: 90%;
+  }
+  #footer .center p {
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  #footer .center .f-info {
+    padding-top: 30px;
+  }
+  #footer .center .copy {
+    padding-bottom: 50px;
+    font-size: 11px;
+  }
+  #footer .center .adress span {
+    font-size: 11px;
+    line-height: 20px;
+  }
+  #footer .center .adress span:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

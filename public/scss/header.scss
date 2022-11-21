@@ -97,3 +97,183 @@
         }
     }
 }
+
+.hbgMenu{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: all 0.5s;
+    z-index: 99;
+    .operci{
+        width: 65%;
+        background-color: rgba(0,0,0,0.4);
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+    }
+    .nav{
+        width: 55%;
+        background-color: #fff;
+        color: #0F5FA6;
+        .xBtn{
+            font-size: 30px;
+            line-height: 30px;
+            margin-top: 15px;
+            margin-right: 15px;
+            position: relative;
+            text-align: center;
+            right: -90%;
+            width: 30px;
+            height: 35px;
+            span{
+                cursor: pointer;
+            }
+        }
+        .joinWrap{
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+            a{
+                display: flex;
+                width: 80px;
+                margin-bottom: 15px;
+                color: #0F5FA6;
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+        .hbgGnb{
+            margin: 120px 0 300px 80px;
+            > li{
+                margin-bottom: 30px;
+                font-size: 30px;
+                a{
+                    color: #0F5FA6;
+                }
+            }
+            .depthWrap2{
+                .depth2{
+                    margin-top: 10px;
+                    height: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: all 0.5s;
+                    overflow: hidden;
+                    li{
+                        line-height: 30px;
+                        font-size: 20px;
+                        text-indent: 10px;
+                        width: 150px;
+                        margin-bottom: 10px;
+                    }
+                }
+                .depth2.on{
+                    height: 200px;
+                }
+            }
+            li:hover{
+                list-style: circle;
+            }
+        }
+        .hbgFoot{
+            margin-left: 80px;
+            .hbgIcon{
+                display: flex;
+                margin-bottom: 30px;
+                a{ color: #0F5FA6;
+                i{
+                    margin-right: 15px;
+                    font-size: 20px;
+                }
+            }
+            }
+            .hbgCopy{
+                font-size: 17px;
+                line-height: 25px;
+                margin-right: 50px;
+            }
+        }
+    }
+}
+.hbgMenu.on{
+    right: 0;
+}
+
+@media screen and (max-width:1600px){
+    #header{
+        .center{
+            justify-content: center;
+            .gnbWrap{
+                .gnb{
+                    > li{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px){
+    #header{
+        .center{
+            .logo{
+                margin-left: 100px;
+                margin-right: -60px;
+            }
+            .galBtn{
+                margin-left: 10px;
+            }
+            .h-icon{
+                margin-right: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px){
+    #header{
+        .center{
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+                margin: unset;
+                line-height: 80px;
+            }
+            .gnbWrap,.galBtn,.h-icon{
+                display: none;
+            }
+            .hbgBtn{
+                cursor: pointer;
+                margin-left: 40px;
+                span{
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #0F5FA6;
+                }
+                .top{
+                    margin-bottom: 5px;
+                }
+                .mid{
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    .hbgMenu{
+        .operci{
+            width: 40%;
+        }
+        .nav{
+            width: 60%;
+            .xBtn{
+                right: -85%;
+            }
+        }
+    }
+}

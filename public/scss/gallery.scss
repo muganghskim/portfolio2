@@ -89,7 +89,7 @@
     }
 }
 .ca_prev, .ca_next {position: absolute; color: #0F5FA6;
-                    top: 50%; font-size: 25px; cursor: pointer;
+                    top: 65%; font-size: 25px; cursor: pointer;
                     transform: translateY(-50%);}
 .ca_prev{
    left: 0;
@@ -103,8 +103,8 @@
     justify-content: center;
     padding: 80px 0;
     .frame{
-        width: 35%;
-        margin-left: 15%;
+        width: 45%;
+        margin-left: 5%;
         .framein{
             width: 100%;
             padding: 2%;
@@ -186,14 +186,66 @@
 @media screen and (max-width:1600px){
     .ca_wrap {width: 70%;}
     .ca_move {width: 266.666666%;}
+    .gall_frame {width: 31%;}
+    .detail{
+        .frame{
+            width: 55%;
+            margin: unset;
+        }
+        .frame_info{
+            h3{
+                margin-left: 40%;
+            }
+            p{
+                margin-left: 40%;
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width:1024px){
     .ca_wrap {width: 90%;}
     .ca_move {width: 400%;}
+    .gall_frame {width: 48%;}
+    .gal_tapmenu{
+        li{
+            margin: 0 15px;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+    }
 }
 
 @media screen and (max-width:768px){
     .ca_wrap {width: 100%;}
     .ca_move {width: 800%;}
+    .gall_frame {width: 100%;}
+    .gal_tapmenu{
+        li{
+            margin: 0 10px;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+    }
+    .detail{
+        flex-direction: column;
+        align-items: center;
+        .frame{
+            width: 100%;
+            margin: unset;
+        }
+        .frame_info{    
+            width: 100%;
+            h3{
+                margin-left: unset;
+                margin-top: 30px;
+            }
+            p{
+                margin-top: 20px;
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+    }
 }

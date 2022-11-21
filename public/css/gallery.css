@@ -104,7 +104,7 @@
 .ca_prev, .ca_next {
   position: absolute;
   color: #0F5FA6;
-  top: 50%;
+  top: 65%;
   font-size: 25px;
   cursor: pointer;
   transform: translateY(-50%);
@@ -124,8 +124,8 @@
   padding: 80px 0;
 }
 .detail .frame {
-  width: 35%;
-  margin-left: 15%;
+  width: 45%;
+  margin-left: 5%;
 }
 .detail .frame .framein {
   width: 100%;
@@ -208,6 +208,20 @@
   .ca_move {
     width: 266.666666%;
   }
+  .gall_frame {
+    width: 31%;
+  }
+  .detail .frame {
+    width: 55%;
+    margin: unset;
+  }
+  .detail .frame_info h3 {
+    margin-left: 40%;
+  }
+  .detail .frame_info p {
+    margin-left: 40%;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .ca_wrap {
@@ -216,6 +230,14 @@
   .ca_move {
     width: 400%;
   }
+  .gall_frame {
+    width: 48%;
+  }
+  .gal_tapmenu li {
+    margin: 0 15px;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
 }
 @media screen and (max-width: 768px) {
   .ca_wrap {
@@ -223,5 +245,33 @@
   }
   .ca_move {
     width: 800%;
+  }
+  .gall_frame {
+    width: 100%;
+  }
+  .gal_tapmenu li {
+    margin: 0 10px;
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  .detail .frame {
+    width: 100%;
+    margin: unset;
+  }
+  .detail .frame_info {
+    width: 100%;
+  }
+  .detail .frame_info h3 {
+    margin-left: unset;
+    margin-top: 30px;
+  }
+  .detail .frame_info p {
+    margin-top: 20px;
+    margin-left: 0%;
+    width: 100%;
   }
 }

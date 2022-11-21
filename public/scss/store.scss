@@ -2,7 +2,7 @@
     background-color: #f7f6f3;
     padding: 100px 0;
     .center{
-        width: 76%;
+        width: 80%;
         margin: 0 auto;
         h2{
             font-size: 50px;
@@ -141,3 +141,47 @@
 .paging li{margin: 0 15px; color: #0F5FA6;}
 .paging li.highlight a {color: #0F5FA6;}
 .paging li a {color: #0f60a673;}
+
+
+@media screen and (max-width:1600px){
+    .storelistheader{
+        width: 100%;
+    }
+    .storelist{
+        width: 100%;
+        
+    }
+}
+
+@media screen and (max-width:1024px){
+    .storeWrap{
+        .center{
+            h2{
+                margin-left: 15px;
+            }
+            .searchWrap{
+                flex-direction: column;
+                align-items: center;
+                .right_search{
+                    .namesearch{
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .storelist{
+        .line{
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                height: 100px;
+                line-height: 1.4;
+                white-space: normal;
+            }
+        }
+        
+    }
+}
