@@ -58,3 +58,20 @@
 .storewrap .list .line > div {
   margin: 0 5px;
 }
+
+.brdwrap {
+  display: flex;
+}
+.brdwrap .list {
+  width: 200px;
+  border: 1px solid #000;
+  margin: 15px;
+}
+.brdwrap .list img {
+  width: 200px;
+}
+.brdwrap .list h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

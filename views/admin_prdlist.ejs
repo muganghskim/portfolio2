@@ -31,6 +31,7 @@
                 <a class="del" href="/prdlist/delete/<%-prdData[i].num%>">삭제</a>
             </div>
         </div>
+        <!-- 수정 -->
         <form class="prdupt" enctype="multipart/form-data" action="/upt/prdlist" method="post">
             <input type="hidden" name="id" value="<%-prdData[i].num%>">
             <select name="category">

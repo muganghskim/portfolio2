@@ -32,6 +32,34 @@
         }
     }
 }
+.storyBot{
+    padding: 150px;
+    background-color: #f7f6f3;
+    .topImg{
+        width: 1300px;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+    .botInfo{
+        width: 1300px;
+        margin: 0 auto;
+        h3{
+            margin-top: 70px;
+            font-size: 45px;
+            line-height: 55px;
+            margin-bottom: 50px;
+            color: #0F5FA6;
+        }
+        p{
+            color: #0f60a68f;
+            font-size: 20px;
+            margin-bottom: 50px;
+            line-height: 30px;
+        }
+    }
+}
 
 //주요 작품
 .grid_wrap{
@@ -366,6 +394,26 @@
             }
         }
     }
+    .storyBot{
+        padding-left: unset;
+        padding-right: unset;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        .topImg{
+            width: 80%;
+        }
+        .botInfo{
+            width: 80%;
+            h3{
+                text-align: center;
+                font-size: 30px;
+            }
+            p{
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width:1300px){
@@ -408,6 +456,7 @@
             width: 100%;
         }
     }
+    
 }
 @media screen and (max-width:950px){
     .grid_wrap{

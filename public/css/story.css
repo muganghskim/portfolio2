@@ -32,6 +32,35 @@
   line-height: 30px;
 }
 
+.storyBot {
+  padding: 150px;
+  background-color: #f7f6f3;
+}
+.storyBot .topImg {
+  width: 1300px;
+  margin: 0 auto;
+}
+.storyBot .topImg img {
+  width: 100%;
+}
+.storyBot .botInfo {
+  width: 1300px;
+  margin: 0 auto;
+}
+.storyBot .botInfo h3 {
+  margin-top: 70px;
+  font-size: 45px;
+  line-height: 55px;
+  margin-bottom: 50px;
+  color: #0F5FA6;
+}
+.storyBot .botInfo p {
+  color: rgba(15, 96, 166, 0.5607843137);
+  font-size: 20px;
+  margin-bottom: 50px;
+  line-height: 30px;
+}
+
 .grid_wrap {
   background-color: #f7f6f3;
 }
@@ -420,6 +449,26 @@
   }
   .donaitionCount .right_count .box {
     margin-top: 20px;
+  }
+  .storyBot {
+    padding-left: unset;
+    padding-right: unset;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .storyBot .topImg {
+    width: 80%;
+  }
+  .storyBot .botInfo {
+    width: 80%;
+  }
+  .storyBot .botInfo h3 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .storyBot .botInfo p {
+    text-align: center;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 1300px) {
