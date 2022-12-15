@@ -13,7 +13,9 @@
         <li><a href="/admin/prdlist">상품등록페이지</a></li>
         <li><a href="/admin/storelist">매장등록페이지</a></li>
         <li><a href="/admin/brdlist">뉴스등록페이지</a></li>
+        <li><a href="/">ai갤러리 메인페이지</a></li>
     </ul>
+    <h2 class="maintitle">뉴스 등록 페이지</h2>
     <!-- 등록된 뉴스목록 전부다 보여주는 구간 -->
     <div class="brdwrap">
         <% for(let i=0; i < brdData.length; i++){ %>
@@ -22,15 +24,51 @@
             <p><%-brdData[i].name%></p>
             <p><%-brdData[i].time%></p>
             <img src="/upload/<%-brdData[i].thumbnail%>">
+            <div class="btns">
+                <div class="upt">수정</div>
+                <a class="del" href="/brdlist/delete/<%-brdData[i].num%>">삭제</a>
+            </div>
         </div>
+        <form class="brdupt" enctype="multipart/form-data" action="/upt/brdlist" method="post">
+            <input type="hidden" name="id" value="<%-brdData[i].num%>">
+            <input type="text" name="name" value="<%-brdData[i].name%>" placeholder="제목">
+            <textarea name="context" placeholder="설명"><%-brdData[i].conext%></textarea>
+            <input type="file" name="thumbnail">
+            <input type="hidden" name="originfile" value="<%- brdData[i].thumbnail %>">
+            <button type="submit">뉴스수정</button>
+            <button class="cancel" type="button">취소</button>
+        </form>
         <% } %>
     </div>
+    <h2 class="maintitle">뉴스 등록</h2>
     <!-- 뉴스를 등록하는 form태그 구간 -->
-    <form enctype="multipart/form-data" action="/add/brdlist" method="post">
+    <form class="adminnewsForm" enctype="multipart/form-data" action="/add/brdlist" method="post">
         <input type="text" name="name" placeholder="제목">
         <textarea name="context" placeholder="설명"></textarea>
         <input type="file" name="thumbnail">
         <button type="submit">뉴스등록</button>
     </form>
+    <script>
+        const uptBtns = document.querySelectorAll(".upt");
+        const delBtns = document.querySelectorAll(".del");
+        const uptForms = document.querySelectorAll(".brdupt");
+        const cancelBtns = document.querySelectorAll(".cancel");
+        uptBtns.forEach(function(item,index){
+            item.addEventListener("click",function(){
+                uptForms[index].style.display = "flex";
+            });
+
+            cancelBtns[index].addEventListener("click",function(){
+                uptForms[index].style.display = "none";
+            });
+
+            delBtns[index].addEventListener("click",function(e){
+                let a = window.confirm("진짜로 삭제 하시겠습니까?");
+                if(!a){
+                    e.preventDefault();
+                }
+            });
+        }); 
+    </script>
 </body>
 </html>

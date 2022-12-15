@@ -1,9 +1,68 @@
+.adminloginWrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maintitle {
+  text-align: center;
+}
+
+.adminnewsForm {
+  display: flex;
+  justify-content: center;
+}
+.adminnewsForm input {
+  margin: 0 4px;
+}
+
+.admin_menu {
+  display: flex;
+}
+.admin_menu li {
+  margin: 0 15px;
+  list-style: none;
+}
+.admin_menu li:last-child {
+  margin-left: 830px;
+}
+
+.storeAdd {
+  display: flex;
+  justify-content: center;
+}
+.storeAdd select, .storeAdd input, .storeAdd button {
+  margin: 0 2px;
+}
+
+.adminlogintitle {
+  text-align: center;
+}
+
+.hint {
+  margin-top: 30px;
+  text-align: center;
+}
+.hint span {
+  margin-right: 10px;
+}
+
 .prdwrap {
   display: flex;
   flex-wrap: wrap;
 }
 .prdwrap .list {
   text-align: center;
+}
+.prdwrap .list p {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prdwrap .list img {
+  height: 100px;
 }
 .prdwrap .list .btns {
   display: flex;
@@ -38,7 +97,7 @@
 
 .insert {
   width: 500px;
-  margin: 100px auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
 }
@@ -47,16 +106,75 @@
   height: 50px;
 }
 
+.paging {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paging li {
+  margin: 0 15px;
+  color: #666;
+  list-style: none;
+}
+
+.paging li.highlight a {
+  color: #333;
+}
+
+.paging li a {
+  color: #999;
+}
+
 .storewrap .list {
   display: flex;
   border: 1px solid #000;
 }
 .storewrap .list .line {
+  padding: 10px;
+  width: 20%;
   display: flex;
   border-right: 1px solid #000;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.storewrap .list .line:nth-child(1) {
+  width: 8%;
+}
+.storewrap .list .line:nth-child(2) {
+  width: 15%;
+}
+.storewrap .list .line:nth-child(3) {
+  width: 17%;
+}
+.storewrap .list .line:nth-child(4) {
+  width: 28%;
 }
 .storewrap .list .line > div {
   margin: 0 5px;
+}
+.storewrap .list .line .upt {
+  width: 50px;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  margin-right: 15px;
+}
+.storewrap .list .line .del {
+  display: block;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  background-color: red;
+  color: #fff;
+}
+.storewrap .storeupt {
+  display: none;
+  margin-bottom: 30px;
+}
+.storewrap .storeupt select, .storewrap .storeupt input, .storewrap .storeupt button {
+  margin: 0 2px;
 }
 
 .brdwrap {
@@ -70,8 +188,41 @@
 .brdwrap .list img {
   width: 200px;
 }
-.brdwrap .list h3 {
+.brdwrap .list p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.brdwrap .list img {
+  height: 150px;
+}
+.brdwrap .list .btns {
+  display: flex;
+  justify-content: center;
+}
+.brdwrap .list .btns .upt {
+  width: 50px;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  margin-right: 15px;
+}
+.brdwrap .list .btns .del {
+  display: block;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  background-color: red;
+  color: #fff;
+}
+.brdwrap .brdupt {
+  display: none;
+  flex-direction: column;
+  width: 100px;
+  padding: 20px;
+  padding-left: unset;
+  margin-right: 15px;
+}
+.brdwrap .brdupt input, .brdwrap .brdupt select, .brdwrap .brdupt textarea, .brdwrap .brdupt button {
+  margin-bottom: 10px;
 }

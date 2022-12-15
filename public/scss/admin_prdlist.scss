@@ -1,9 +1,63 @@
+.adminloginWrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.maintitle{
+    text-align: center;
+}
+.adminnewsForm{
+    display: flex;
+    justify-content: center;
+    input{
+        margin: 0 4px;
+    }
+}
+.admin_menu{
+    display: flex;
+    li{
+        margin: 0 15px;
+        list-style: none;
+        &:last-child{
+            margin-left: 830px;
+        }
+    }
+}
+.storeAdd{
+    display: flex;
+    justify-content: center;
+    select,input,button{
+        margin: 0 2px;
+    }
+}
+
+.adminlogintitle{
+    text-align: center;
+}
+.hint{
+    margin-top: 30px;
+    text-align: center;
+    span{
+        margin-right: 10px;
+    }
+}
+
 //상품 등록페이지
 .prdwrap{
     display: flex;
     flex-wrap: wrap;
     .list{
         text-align: center;
+        p{
+            white-space: pre;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        img{
+            height: 100px;
+        }
         .btns{
             display: flex;
             justify-content: center;
@@ -38,7 +92,7 @@
 }
 .insert{
     width: 500px;
-    margin: 100px auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     input,select,textarea,button{
@@ -46,6 +100,10 @@
         height: 50px;
     }
 }
+.paging {display: flex; justify-content: center; margin-top: 20px;}
+.paging li{margin: 0 15px; color: #666; list-style: none;}
+.paging li.highlight a {color: #333;}
+.paging li a {color: #999;}
 
 //전시관 안내 등록페이지
 .storewrap{
@@ -53,14 +111,54 @@
         display: flex;
         border: 1px solid #000;
         .line{
+            padding: 10px;
+            width: 20%;
             display: flex;
             border-right: 1px solid #000;
+            white-space: pre;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:nth-child(1){
+                width: 8%;
+            }
+            &:nth-child(2){
+                width: 15%;
+            }
+            &:nth-child(3){
+                width: 17%;
+            }
+            &:nth-child(4){
+                width: 28%;
+            }
             > div{
                 margin: 0 5px;
             }
+            .upt{
+                width: 50px;
+                background-color: gray;
+                text-align: center;
+                color: #fff;
+                margin-right: 15px;
+            }
+            .del{
+                display: block;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                background-color: red;
+                color: #fff;
+            }
+        }
+    }
+    .storeupt{
+        display: none;
+        margin-bottom: 30px;
+        select,input,button{
+            margin: 0 2px;
         }
     }
 }
+
 
 //뉴스 등록페이지
 .brdwrap{
@@ -72,10 +170,43 @@
         img{
             width: 200px;
         }
-        h3{
+        p{
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        img{
+            height: 150px;
+        }
+        .btns{
+            display: flex;
+            justify-content: center;
+            .upt{
+                width: 50px;
+                background-color: gray;
+                text-align: center;
+                color: #fff;
+                margin-right: 15px;
+            }
+            .del{
+                display: block;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                background-color: red;
+                color: #fff;
+            }
+        }
+    }
+    .brdupt{
+        display: none;
+        flex-direction: column;
+        width: 100px;
+        padding: 20px;
+        padding-left: unset;
+        margin-right: 15px;
+        input,select,textarea,button{
+            margin-bottom: 10px;
         }
     }
 }
